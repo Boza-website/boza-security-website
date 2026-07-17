@@ -49,12 +49,11 @@ margin:auto;
     animation: fadeUp 1s ease forwards;
 }
 
-h2{
-
-font-size:42px;
-
-font-weight:700;
-
+.hero h2{
+    font-size: clamp(1.2rem,3vw,2rem);
+    color:#00d26a;
+    margin-bottom:20px;
+    animation: fadeUp 1.3s ease forwards;
 }
 
 h3{
