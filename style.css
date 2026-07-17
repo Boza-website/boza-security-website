@@ -41,12 +41,12 @@ margin:auto;
 
 /* Headings */
 
-h1{
-
-font-size:60px;
-
-font-weight:800;
-
+.hero h1{
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 20px 0;
+    animation: fadeUp 1s ease forwards;
 }
 
 h2{
