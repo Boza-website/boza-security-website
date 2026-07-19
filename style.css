@@ -362,3 +362,40 @@ nav ul{
     50%{transform:scale(1.1);}
     100%{transform:scale(1);}
 }
+.floating-buttons{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:9999;
+}
+
+.floating-whatsapp,
+.floating-call{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+    animation:pulse 2s infinite;
+}
+
+.floating-whatsapp{
+    background:#25D366;
+}
+
+.floating-call{
+    background:#0066cc;
+    color:white;
+    text-decoration:none;
+    font-size:32px;
+}
+
+.floating-whatsapp img{
+    width:36px;
+    height:36px;
+}
