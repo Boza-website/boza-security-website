@@ -306,3 +306,29 @@ background:#333;
         transform: translateY(0);
     }
 }
+/* Mobile Improvements */
+@media (max-width: 768px) {
+
+.hero h1{
+    font-size:2.4rem;
+    line-height:1.2;
+}
+
+.hero h2{
+    font-size:1.2rem;
+}
+
+nav{
+    padding:12px 5%;
+}
+
+nav ul{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.logo img{
+    width:55px;
+}
+}
