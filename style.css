@@ -468,3 +468,139 @@ margin-bottom:20px;
 margin-bottom:15px;
 
 }
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery{
+padding:100px 0;
+background:#0d0d0d;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.30);
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* ==========================================
+   BRANDS
+========================================== */
+
+.brands{
+padding:100px 0;
+background:#151515;
+}
+
+.brand-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.brand-card{
+background:#202020;
+padding:30px;
+border-radius:15px;
+text-align:center;
+font-weight:600;
+transition:.4s;
+}
+
+.brand-card:hover{
+background:#00c853;
+color:#ffffff;
+transform:translateY(-8px);
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact{
+padding:100px 0;
+background:#0d0d0d;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.contact-card{
+background:#1b1b1b;
+padding:35px;
+border-radius:15px;
+text-align:center;
+transition:.4s;
+}
+
+.contact-card:hover{
+transform:translateY(-8px);
+}
+
+.contact-card i{
+font-size:40px;
+color:#00c853;
+margin-bottom:20px;
+}
+
+.contact-card a{
+color:#ffffff;
+}
+
+.contact-card a:hover{
+color:#00c853;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta{
+padding:80px 20px;
+background:#00c853;
+text-align:center;
+}
+
+.cta h2{
+font-size:40px;
+margin-bottom:20px;
+color:#ffffff;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:30px;
+color:#ffffff;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+background:#000000;
+padding:40px 20px;
+text-align:center;
+}
+
+footer p{
+color:#bdbdbd;
+margin:8px 0;
+}
