@@ -1,378 +1,195 @@
-/* ===========================
+/* ==========================================
    BOZA SECURITY WEBSITE V2
-   =========================== */
+   ========================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#0f0f0f;
-color:#ffffff;
-line-height:1.7;
-overflow-x:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#101010;
+    color:#ffffff;
+    line-height:1.7;
+    overflow-x:hidden;
 }
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
 img{
-max-width:100%;
-display:block;
+    max-width:100%;
+    display:block;
 }
 
-/* ===========================
+/* ==========================
    HEADER
-=========================== */
+========================== */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:rgba(15,15,15,.96);
-backdrop-filter:blur(10px);
-z-index:999;
-box-shadow:0 2px 20px rgba(0,0,0,.35);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(10,10,10,.95);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,.4);
 }
 
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
 }
 
 .logo img{
-width:70px;
-transition:.4s;
+    width:75px;
+    transition:.4s;
 }
 
 .logo img:hover{
-transform:rotate(5deg) scale(1.05);
+    transform:rotate(5deg) scale(1.05);
 }
 
 .navbar ul{
-display:flex;
-gap:28px;
-list-style:none;
+    list-style:none;
+    display:flex;
+    gap:30px;
 }
 
-.navbar ul li a{
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:.3s;
+.navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
 }
 
-.navbar ul li a:hover{
-color:#00d26a;
+.navbar a:hover{
+    color:#00c853;
 }
 
-/* ===========================
+/* ==========================
    HERO
-=========================== */
+========================== */
 
 .hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:140px 20px 80px;
-background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78));
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:150px 20px 80px;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
 }
 
 .hero-content{
-max-width:850px;
-animation:fadeUp 1s ease;
+    max-width:850px;
+    animation:fadeUp 1s ease;
 }
 
+/* Keep the heading size we already agreed on */
+
 .hero h1{
-font-size:clamp(2rem,5vw,3.6rem);
-line-height:1.15;
-margin-bottom:20px;
+    font-size:2.6rem;
+    margin-bottom:20px;
+    line-height:1.2;
 }
 
 .hero h2{
-font-size:clamp(1.2rem,3vw,2rem);
-color:#00d26a;
-margin-bottom:25px;
+    font-size:1.35rem;
+    color:#00c853;
+    margin-bottom:25px;
 }
 
 .hero p{
-font-size:1.08rem;
-margin-bottom:35px;
-max-width:760px;
-margin-left:auto;
-margin-right:auto;
+    font-size:1.05rem;
+    max-width:750px;
+    margin:auto;
+    margin-bottom:35px;
 }
-/* ===========================
+
+/* ==========================
    HERO BUTTONS
-=========================== */
+========================== */
 
 .hero-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.btn{
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-transition:.35s;
-display:inline-block;
+.btn-call,
+.btn-whatsapp{
+
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.35s;
+
 }
 
 .btn-call{
-background:#111111;
-border:2px solid #00d26a;
-color:#00d26a;
+
+    background:#111;
+    color:#00c853;
+    border:2px solid #00c853;
+
 }
 
 .btn-call:hover{
-background:#00d26a;
-color:#111111;
-transform:translateY(-4px);
+
+    background:#00c853;
+    color:#111;
+    transform:translateY(-5px);
+
 }
 
 .btn-whatsapp{
-background:#25D366;
-color:white;
+
+    background:#25D366;
+    color:white;
+
 }
 
 .btn-whatsapp:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(37,211,102,.45);
+
+    transform:translateY(-5px);
+    box-shadow:0 8px 25px rgba(37,211,102,.45);
+
 }
 
-/* ===========================
-   HERO STATS
-=========================== */
-
-.hero-stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:25px;
-margin-top:20px;
-}
-
-.stat{
-background:#1a1a1a;
-padding:30px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.08);
-transition:.35s;
-}
-
-.stat:hover{
-transform:translateY(-8px);
-border-color:#00d26a;
-}
-
-.stat h3{
-font-size:2.2rem;
-color:#00d26a;
-margin-bottom:10px;
-}
-
-.stat p{
-font-size:1rem;
-}
-
-/* ===========================
-   ABOUT
-=========================== */
-
-.about{
-padding:90px 20px;
-background:#151515;
-}
-
-.about h2{
-text-align:center;
-font-size:2.3rem;
-margin-bottom:30px;
-}
-
-.about p{
-max-width:900px;
-margin:0 auto 20px;
-text-align:center;
-}
-
-/* ===========================
+/* ==========================
    ANIMATION
-=========================== */
+========================== */
 
 @keyframes fadeUp{
 
 from{
+
 opacity:0;
-transform:translateY(40px);
+transform:translateY(45px);
+
 }
 
 to{
+
 opacity:1;
 transform:translateY(0);
-}
 
 }
-/* ===========================
-   SERVICES
-=========================== */
 
-.services{
-padding:90px 20px;
-background:#0f0f0f;
 }
-
-.services h2,
-.why-us h2{
-text-align:center;
-font-size:2.3rem;
-margin-bottom:50px;
-}
-
-.services-grid,
-.why-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.service-card,
-.why-grid div{
-background:#1b1b1b;
-padding:30px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.08);
-transition:all .35s ease;
-}
-
-.service-card:hover,
-.why-grid div:hover{
-transform:translateY(-10px);
-border-color:#00d26a;
-box-shadow:0 15px 35px rgba(0,210,106,.18);
-}
-
-.service-card h3,
-.why-grid h3{
-color:#00d26a;
-margin-bottom:15px;
-}
-
-.why-us{
-padding:90px 20px;
-background:#151515;
-}
-
-/* ===========================
-   FLOATING BUTTONS
-=========================== */
-
-.floating-buttons{
-position:fixed;
-right:20px;
-bottom:20px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:9999;
-animation:fadeUp .8s ease;
-}
-
-.floating-whatsapp,
-.floating-call{
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,.35);
-transition:.3s;
-}
-
-.floating-whatsapp{
-background:#25D366;
-}
-
-.floating-whatsapp img{
-width:34px;
-height:34px;
-border-radius:50%;
-}
-
-.floating-call{
-background:#111;
-color:#00d26a;
-border:2px solid #00d26a;
-font-size:28px;
-}
-
-.floating-whatsapp:hover,
-.floating-call:hover{
-transform:scale(1.1);
-}
-
-/* ===========================
-   MOBILE
-=========================== */
-
-@media (max-width:768px){
-
-.navbar{
-flex-direction:column;
-gap:15px;
-}
-
-.navbar ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
-
-.hero{
-padding-top:150px;
-}
-
-.hero h1{
-font-size:2.3rem;
-}
-
-.hero h2{
-font-size:1.3rem;
-}
-
-.hero-buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.btn{
-width:260px;
-text-align:center;
-}
-
-.logo img{
-width:60px;
-}
-
-   }
