@@ -96,3 +96,13 @@ setTimeout(updateCounter,speed);
 updateCounter();
 
 });
+section{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+   }
