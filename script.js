@@ -69,3 +69,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/* ==========================================
+MOBILE MENU
+========================================== */
+
+@media(max-width:900px){
+
+nav{
+
+display:none;
+width:100%;
+margin-top:20px;
+
+}
+
+nav.active{
+
+display:block;
+
+}
+
+nav ul{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+}
