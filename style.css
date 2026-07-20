@@ -133,13 +133,27 @@ text-align:center;
 padding:120px 20px;
 overflow:hidden;
 
-background:
-linear-gradient(rgba(0,0,0,.75),
-rgba(0,0,0,.75)),
-url("images/hero.jpg");
+.hero{
+
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px;
+overflow:hidden;
+
+background-image:
+linear-gradient(rgba(0,0,0,.70),
+rgba(0,0,0,.70)),
+url("images/hero1.jpg");
 
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
+
+transition:background-image 1s ease-in-out;
 
 }
 
