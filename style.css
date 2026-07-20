@@ -117,3 +117,118 @@ max-width:760px;
 margin-left:auto;
 margin-right:auto;
 }
+/* ===========================
+   HERO BUTTONS
+=========================== */
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:50px;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:.35s;
+display:inline-block;
+}
+
+.btn-call{
+background:#111111;
+border:2px solid #00d26a;
+color:#00d26a;
+}
+
+.btn-call:hover{
+background:#00d26a;
+color:#111111;
+transform:translateY(-4px);
+}
+
+.btn-whatsapp{
+background:#25D366;
+color:white;
+}
+
+.btn-whatsapp:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(37,211,102,.45);
+}
+
+/* ===========================
+   HERO STATS
+=========================== */
+
+.hero-stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+margin-top:20px;
+}
+
+.stat{
+background:#1a1a1a;
+padding:30px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+transition:.35s;
+}
+
+.stat:hover{
+transform:translateY(-8px);
+border-color:#00d26a;
+}
+
+.stat h3{
+font-size:2.2rem;
+color:#00d26a;
+margin-bottom:10px;
+}
+
+.stat p{
+font-size:1rem;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about{
+padding:90px 20px;
+background:#151515;
+}
+
+.about h2{
+text-align:center;
+font-size:2.3rem;
+margin-bottom:30px;
+}
+
+.about p{
+max-width:900px;
+margin:0 auto 20px;
+text-align:center;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
