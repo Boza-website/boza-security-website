@@ -3,106 +3,69 @@
    SCRIPT.JS
 ========================================== */
 
-// Smooth scrolling for navigation links
+document.addEventListener("DOMContentLoaded", () => {
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    /* Mobile Menu */
 
-anchor.addEventListener("click", function(e){
+    const menuBtn = document.querySelector(".menu-btn");
+    const nav = document.querySelector("nav");
 
-e.preventDefault();
+    if (menuBtn) {
 
-const target=document.querySelector(this.getAttribute("href"));
+        menuBtn.addEventListener("click", () => {
 
-if(target){
+            nav.classList.toggle("active");
 
-target.scrollIntoView({
+        });
 
-behavior:"smooth"
+    }
 
-});
+    /* Smooth Scrolling */
 
-}
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-});
+        link.addEventListener("click", function(e) {
 
-});
+            e.preventDefault();
 
-// Header shadow while scrolling
+            const target = document.querySelector(this.getAttribute("href"));
 
-window.addEventListener("scroll",()=>{
+            if (target) {
 
-const header=document.querySelector("header");
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
 
-if(window.scrollY>50){
+            }
 
-header.style.boxShadow="0 5px 25px rgba(0,0,0,.45)";
+            nav.classList.remove("active");
 
-}else{
+        });
 
-header.style.boxShadow="none";
+    });
 
-}
+    /* Scroll Animation */
 
-});
+    const observer = new IntersectionObserver((entries) => {
 
-// Fade in sections
+        entries.forEach(entry => {
 
-const observer=new IntersectionObserver((entries)=>{
+            if (entry.isIntersecting) {
 
-entries.forEach(entry=>{
+                entry.target.classList.add("show");
 
-if(entry.isIntersecting){
+            }
 
-entry.target.classList.add("show");
+        });
 
-}
+    }, {
+        threshold: 0.2
+    });
 
-});
+    document.querySelectorAll("section").forEach(section => {
 
-});
+        observer.observe(section);
 
-document.querySelectorAll("section").forEach(section=>{
-
-observer.observe(section);
-
-});
-
-// Counter animation
-
-const counters=document.querySelectorAll(".stat h3");
-
-counters.forEach(counter=>{
-
-const updateCounter=()=>{
-
-const target=+counter.innerText.replace("+","").replace("%","");
-
-const count=+counter.getAttribute("data-count")||0;
-
-const speed=25;
-
-if(count<target){
-
-counter.setAttribute("data-count",count+1);
-
-counter.innerText=count+1+(counter.innerText.includes("%")?"%":"+");
-
-setTimeout(updateCounter,speed);
-
-}
-
-};
-
-updateCounter();
+    });
 
 });
-section{
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
-   }
