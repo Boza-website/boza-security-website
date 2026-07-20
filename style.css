@@ -1,7 +1,6 @@
 /* ===========================
-BOZA SECURITY WEBSITE
-Version 3.0
-=========================== */
+   BOZA SECURITY WEBSITE V2
+   =========================== */
 
 *{
 margin:0;
@@ -14,388 +13,107 @@ scroll-behavior:smooth;
 }
 
 body{
-
-font-family:'Poppins',sans-serif;
-
-background:#0b0b0b;
-
-color:#e8e8e8;
-
+font-family:Arial, Helvetica, sans-serif;
+background:#0f0f0f;
+color:#ffffff;
 line-height:1.7;
-
 overflow-x:hidden;
-
 }
-
-/* Containers */
 
 .container{
-
 width:90%;
-
-max-width:1300px;
-
+max-width:1200px;
 margin:auto;
-
 }
-
-/* Headings */
-
-.hero h1{
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
-    line-height: 1.1;
-    font-weight: 800;
-    margin: 20px 0;
-    animation: fadeUp 1s ease forwards;
-}
-
-.hero h2{
-    font-size: clamp(1.2rem,3vw,2rem);
-    color:#00d26a;
-    margin-bottom:20px;
-    animation: fadeUp 1.3s ease forwards;
-}
-
-h3{
-
-font-size:26px;
-
-font-weight:600;
-
-}
-
-p{
-
-font-size:18px;
-
-color:#cfcfcf;
-
-}
-
-/* Links */
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-/* Images */
 
 img{
-
 max-width:100%;
-
 display:block;
-
 }
+
 /* ===========================
-HEADER
+   HEADER
 =========================== */
 
 header{
-
 position:fixed;
-
 top:0;
-
 left:0;
-
 width:100%;
-
-background:rgba(10,10,10,.95);
-
-backdrop-filter:blur(12px);
-
-z-index:1000;
-
-border-bottom:1px solid #333;
-
+background:rgba(15,15,15,.96);
+backdrop-filter:blur(10px);
+z-index:999;
+box-shadow:0 2px 20px rgba(0,0,0,.35);
 }
 
-nav{
-
+.navbar{
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
-padding:18px 0;
-
+padding:15px 5%;
 }
 
 .logo img{
-
-height:75px;
-
+width:70px;
+transition:.4s;
 }
 
-nav ul{
+.logo img:hover{
+transform:rotate(5deg) scale(1.05);
+}
 
+.navbar ul{
 display:flex;
-
+gap:28px;
 list-style:none;
-
-gap:35px;
-
 }
 
-nav ul li a{
-
+.navbar ul li a{
+text-decoration:none;
+color:white;
 font-weight:600;
-
 transition:.3s;
-
 }
 
-nav ul li a:hover{
-
-color:#25D366;
-
-}
-
-.quote-btn{
-
-background:#25D366;
-
-padding:14px 28px;
-
-border-radius:50px;
-
-font-weight:700;
-
-color:#fff;
-
-transition:.3s;
-
-}
-
-.quote-btn:hover{
-
-transform:translateY(-3px);
-
+.navbar ul li a:hover{
+color:#00d26a;
 }
 
 /* ===========================
-HERO
+   HERO
 =========================== */
 
 .hero{
-
 min-height:100vh;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 text-align:center;
-
 padding:140px 20px 80px;
-
-background:
-linear-gradient(rgba(0,0,0,.75),
-rgba(0,0,0,.80)),
-url("images/hero.jpg");
-
-background-size:cover;
-
-background-position:center;
-
+background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78));
 }
 
 .hero-content{
-
-max-width:900px;
-
+max-width:850px;
+animation:fadeUp 1s ease;
 }
 
-.hero h3{
-
-color:#25D366;
-
-margin-bottom:15px;
-
-}
-
+.hero h1{
+font-size:clamp(2rem,5vw,3.6rem);
+line-height:1.15;
+margin-bottom:20px;
 }
 
 .hero h2{
-
-color:silver;
-
+font-size:clamp(1.2rem,3vw,2rem);
+color:#00d26a;
 margin-bottom:25px;
-
 }
 
 .hero p{
-    font-size:1.1rem;
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
-    animation: fadeUp 1.6s ease forwards;
-}
-
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.btn-green{
-
-background:#25D366;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:700;
-
-color:#fff;
-
-transition:.3s;
-
-}
-
-.btn-green:hover{
-
-transform:translateY(-4px);
-
-}
-
-.btn-dark{
-
-background:#222;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:700;
-
-border:1px solid #555;
-
-transition:.3s;
-
-}
-
-.btn-dark:hover{
-
-background:#333;
-
-  }
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* Mobile Improvements */
-@media (max-width: 768px) {
-
-.hero h1{
-    font-size:2.4rem;
-    line-height:1.2;
-}
-
-.hero h2{
-    font-size:1.2rem;
-}
-
-nav{
-    padding:12px 5%;
-}
-
-nav ul{
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.logo img{
-    width:55px;
-}
-}
-/* Floating WhatsApp Button */
-.floating-whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:65px;
-    height:65px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    text-decoration:none;
-    box-shadow:0 6px 20px rgba(0,0,0,.4);
-    z-index:9999;
-    animation:pulse 2s infinite;
-    transition:.3s;
-}
-
-.floating-whatsapp:hover{
-    transform:scale(1.1);
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
-}
-.floating-buttons{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    z-index:9999;
-}
-
-.floating-whatsapp,
-.floating-call{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 6px 20px rgba(0,0,0,.4);
-    animation:pulse 2s infinite;
-}
-
-.floating-whatsapp{
-    background:#25D366;
-}
-
-.floating-call{
-    background:#0066cc;
-    color:white;
-    text-decoration:none;
-    font-size:32px;
-}
-
-.floating-whatsapp img{
-    width:36px;
-    height:36px;
+font-size:1.08rem;
+margin-bottom:35px;
+max-width:760px;
+margin-left:auto;
+margin-right:auto;
 }
