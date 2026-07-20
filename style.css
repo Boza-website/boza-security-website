@@ -232,3 +232,147 @@ transform:translateY(0);
 }
 
 }
+/* ===========================
+   SERVICES
+=========================== */
+
+.services{
+padding:90px 20px;
+background:#0f0f0f;
+}
+
+.services h2,
+.why-us h2{
+text-align:center;
+font-size:2.3rem;
+margin-bottom:50px;
+}
+
+.services-grid,
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.service-card,
+.why-grid div{
+background:#1b1b1b;
+padding:30px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+transition:all .35s ease;
+}
+
+.service-card:hover,
+.why-grid div:hover{
+transform:translateY(-10px);
+border-color:#00d26a;
+box-shadow:0 15px 35px rgba(0,210,106,.18);
+}
+
+.service-card h3,
+.why-grid h3{
+color:#00d26a;
+margin-bottom:15px;
+}
+
+.why-us{
+padding:90px 20px;
+background:#151515;
+}
+
+/* ===========================
+   FLOATING BUTTONS
+=========================== */
+
+.floating-buttons{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:9999;
+animation:fadeUp .8s ease;
+}
+
+.floating-whatsapp,
+.floating-call{
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+transition:.3s;
+}
+
+.floating-whatsapp{
+background:#25D366;
+}
+
+.floating-whatsapp img{
+width:34px;
+height:34px;
+border-radius:50%;
+}
+
+.floating-call{
+background:#111;
+color:#00d26a;
+border:2px solid #00d26a;
+font-size:28px;
+}
+
+.floating-whatsapp:hover,
+.floating-call:hover{
+transform:scale(1.1);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+.navbar ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.hero{
+padding-top:150px;
+}
+
+.hero h1{
+font-size:2.3rem;
+}
+
+.hero h2{
+font-size:1.3rem;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:260px;
+text-align:center;
+}
+
+.logo img{
+width:60px;
+}
+
+   }
