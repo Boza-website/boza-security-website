@@ -102,3 +102,107 @@ body{
     background:#25D366;
     color:#000;
    }
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+    min-height:100vh;
+    background:url("images/security-bg.jpg") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-overlay{
+    width:100%;
+    min-height:100vh;
+    background:rgba(0,0,0,0.70);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:700px;
+    text-align:center;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#ffffff;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:28px;
+    color:#25D366;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    color:#dddddd;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:#000;
+}
+
+.call{
+    background:#444;
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+       }
