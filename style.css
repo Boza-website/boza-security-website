@@ -115,3 +115,206 @@ nav ul li a:hover{
 .call-btn:hover{
     transform:scale(1.08);
 }
+/* ===========================
+   SECTIONS
+=========================== */
+
+section{
+    padding:80px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:silver;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+/* SERVICES */
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service-box,
+.feature-box,
+.brand-box{
+    background:#1e1e1e;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #333;
+    transition:0.3s;
+}
+
+.service-box:hover,
+.feature-box:hover,
+.brand-box:hover{
+    transform:translateY(-8px);
+    border-color:#00c853;
+}
+
+.service-box h3,
+.feature-box h3{
+    color:#00c853;
+    margin-bottom:15px;
+}
+
+/* ABOUT */
+
+.about{
+    text-align:center;
+}
+
+.about p{
+    max-width:900px;
+    margin:15px auto;
+}
+
+/* BRANDS */
+
+.brand-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* WHY US */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact-buttons{
+    margin-top:30px;
+   }
+/* ===========================
+   FLOATING BUTTONS
+=========================== */
+
+.floating-whatsapp,
+.floating-call{
+
+    position:fixed;
+
+    right:20px;
+
+    padding:15px 22px;
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    z-index:999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+    transition:.3s;
+
+}
+
+.floating-whatsapp{
+
+    bottom:90px;
+
+    background:#00c853;
+
+}
+
+.floating-call{
+
+    bottom:20px;
+
+    background:#555;
+
+}
+
+.floating-whatsapp:hover,
+.floating-call:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#000;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:2px solid silver;
+
+}
+
+footer img{
+
+    height:70px;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    margin:10px 0;
+
+    color:#ccc;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        width:100%;
+        margin-top:20px;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    header{
+        flex-wrap:wrap;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
