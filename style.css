@@ -1,1 +1,117 @@
+/* ===========================
+   BOZA SECURITY SYSTEMS
+   STYLE.CSS
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#1b1b1b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    z-index:1000;
+    border-bottom:2px solid silver;
+}
+
+.logo-area img{
+    height:65px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00c853;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 60px;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
+}
+
+.hero h1{
+    font-size:50px;
+    color:silver;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:800px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.whatsapp-btn,
+.call-btn{
+    display:inline-block;
+    padding:15px 35px;
+    margin:10px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.whatsapp-btn{
+    background:#00c853;
+    color:white;
+}
+
+.call-btn{
+    background:silver;
+    color:black;
+}
+
+.whatsapp-btn:hover,
+.call-btn:hover{
+    transform:scale(1.08);
+}
