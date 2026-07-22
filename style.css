@@ -36,7 +36,9 @@ header{
 }
 
 .logo-area img{
-    height:65px;
+    height:110px;
+    width:auto;
+    transition:0.3s ease;
 }
 
 nav ul{
