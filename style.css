@@ -72,8 +72,8 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:120px 20px 60px;
-    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
+    padding:260px 20px 60px;
+    background:linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75));
 }
 
 .hero h1{
