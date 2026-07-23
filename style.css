@@ -1,7 +1,7 @@
-/* ===========================
-   BOZA SECURITY SYSTEMS
-   STYLE.CSS
-=========================== */
+/* ==========================
+BOZA SECURITY SYSTEMS
+STYLE.CSS V2
+========================== */
 
 *{
     margin:0;
@@ -15,206 +15,85 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#111;
-    color:#fff;
-    line-height:1.6;
+    background:#0f0f0f;
+    color:#ffffff;
+    line-height:1.7;
 }
 
-/* HEADER */
-
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#1b1b1b;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    z-index:1000;
-    border-bottom:2px solid silver;
-}
-
-.logo-area img{
-    height:110px;
-    width:auto;
-    transition:0.3s ease;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#00c853;
-}
-
-.menu-toggle{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:260px 20px 60px;
-    background:linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75));
-}
-
-.hero h1{
-    font-size:50px;
-    color:silver;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:22px;
-    max-width:800px;
+.container{
+    width:90%;
+    max-width:1300px;
     margin:auto;
 }
 
-.hero-buttons{
-    margin-top:35px;
-}
-
-.whatsapp-btn,
-.call-btn{
-    display:inline-block;
-    padding:15px 35px;
-    margin:10px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.whatsapp-btn{
-    background:#00c853;
-    color:white;
-}
-
-.call-btn{
-    background:silver;
-    color:black;
-}
-
-.whatsapp-btn:hover,
-.call-btn:hover{
-    transform:scale(1.08);
-}
-/* ===========================
-   SECTIONS
-=========================== */
-
 section{
-    padding:80px 8%;
+    padding:90px 0;
 }
 
-section h2{
-    text-align:center;
+h1,h2,h3{
     color:silver;
-    font-size:36px;
-    margin-bottom:40px;
 }
 
-/* SERVICES */
-
-.service-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.service-box,
-.feature-box,
-.brand-box{
-    background:#1e1e1e;
-    padding:25px;
-    border-radius:12px;
-    border:1px solid #333;
-    transition:0.3s;
-}
-
-.service-box:hover,
-.feature-box:hover,
-.brand-box:hover{
-    transform:translateY(-8px);
-    border-color:#00c853;
-}
-
-.service-box h3,
-.feature-box h3{
-    color:#00c853;
-    margin-bottom:15px;
-}
-
-/* ABOUT */
-
-.about{
+h2{
     text-align:center;
+    margin-bottom:20px;
+    font-size:2.4rem;
 }
 
-.about p{
-    max-width:900px;
-    margin:15px auto;
+p{
+    color:#d7d7d7;
 }
+/* ==========================
+HEADER
+========================== */
 
-/* BRANDS */
-
-.brand-list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    text-align:center;
-    font-weight:bold;
-}
-
-/* WHY US */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-/* CONTACT */
-
-.contact{
-    text-align:center;
-}
-
-.contact-buttons{
-    margin-top:30px;
-   }
-/* ===========================
-   FLOATING BUTTONS
-=========================== */
-
-.floating-whatsapp,
-.floating-call{
+header{
 
     position:fixed;
 
-    right:20px;
+    top:0;
 
-    padding:15px 22px;
+    left:0;
 
-    border-radius:50px;
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 6%;
+
+    background:rgba(15,15,15,.95);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:2px solid #25D366;
+
+    z-index:9999;
+
+}
+
+.logo img{
+
+    height:95px;
+
+    width:auto;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav ul li a{
 
     color:white;
 
@@ -222,133 +101,156 @@ section h2{
 
     font-weight:bold;
 
-    z-index:999;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
-
     transition:.3s;
 
 }
 
-.floating-whatsapp{
+nav ul li a:hover{
 
-    bottom:90px;
-
-    background:#00c853;
+    color:#25D366;
 
 }
 
-.floating-call{
+.menu-toggle{
 
-    bottom:20px;
+    display:none;
 
-    background:#555;
+    font-size:34px;
 
-}
+    cursor:pointer;
 
-.floating-whatsapp:hover,
-.floating-call:hover{
+   }
+/* ==========================
+HERO SECTION
+========================== */
 
-    transform:scale(1.1);
+.hero{
 
-}
+    min-height:100vh;
 
-/* FOOTER */
+    display:flex;
 
-footer{
+    align-items:center;
 
-    background:#000;
+    justify-content:center;
 
     text-align:center;
 
-    padding:40px 20px;
+    padding:180px 20px 100px;
 
-    border-top:2px solid silver;
+    background:
+    linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.80)),
+    url("images/01-team-soweto-towers.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
 
 }
 
-footer img{
+.hero-content{
 
-    height:70px;
+    max-width:900px;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    text-shadow:0 4px 10px rgba(0,0,0,.6);
+
+}
+
+.hero p{
+
+    font-size:24px;
+
+    color:#e5e5e5;
+
+    max-width:800px;
+
+    margin:auto;
+
+       }
+/* ==========================
+ABOUT
+========================== */
+
+.about{
+
+    background:#151515;
+
+}
+
+.about p{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+SERVICES
+========================== */
+
+.services{
+
+    background:#101010;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.service-card{
+
+    background:#1b1b1b;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    border:1px solid #333;
+
+    transition:.4s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#25D366;
+
+    box-shadow:0 10px 25px rgba(37,211,102,.25);
+
+}
+
+.service-card h3{
+
+    color:#25D366;
 
     margin-bottom:15px;
 
-}
-
-footer p{
-
-    margin:10px 0;
-
-    color:#ccc;
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .menu-toggle{
-        display:block;
-    }
-
-    nav{
-        display:none;
-        width:100%;
-        margin-top:20px;
-    }
-
-    nav.active{
-        display:block;
-    }
-
-    header{
-        flex-wrap:wrap;
-    }
-
-    nav ul{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-}
-/* ================= GALLERY ================= */
-
-#gallery{
-    padding:80px 20px;
-    background:#111;
-}
-
-#gallery h2{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:40px;
-    color:#25D366;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.gallery-grid img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:.3s;
-    cursor:pointer;
-}
-
-.gallery-grid img:hover{
-    transform:scale(1.05);
 }
