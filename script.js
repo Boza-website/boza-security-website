@@ -1,52 +1,58 @@
 // ==========================
-// BOZA SECURITY SYSTEMS
-// script.js
+// MOBILE MENU
 // ==========================
 
-// Mobile Menu Toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 
-if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-    });
+if(menuToggle){
+
+menuToggle.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
 }
 
-// Close menu when a link is clicked
-const navLinks = document.querySelectorAll("nav a");
+// Close menu after clicking a link
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
-    });
+document.querySelectorAll("nav a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+nav.classList.remove("active");
+
 });
 
-// Fade-in animation on scroll
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, {
-    threshold: 0.15
 });
+// ==========================
+// SCROLL ANIMATION
+// ==========================
 
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.8s ease";
-    observer.observe(section);
-});
+const sections=document.querySelectorAll("section");
 
-// Footer Year
-const footerText = document.querySelector("footer p");
+const observer=new IntersectionObserver((entries)=>{
 
-if (footerText) {
-    footerText.innerHTML =
-        `© ${new Date().getFullYear()} Boza Security Systems Accredited Technicians (PTY) LTD. All Rights Reserved.`;
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
 }
+
+});
+
+},{threshold:0.15});
+
+sections.forEach(section=>{
+
+section.style.opacity="0";
+section.style.transform="translateY(40px)";
+section.style.transition="all .8s ease";
+
+observer.observe(section);
+
+});
