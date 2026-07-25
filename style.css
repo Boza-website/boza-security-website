@@ -1,7 +1,10 @@
-/* ==========================
-BOZA SECURITY SYSTEMS
-STYLE.CSS V2
-========================== */
+/* ===================================================
+   BOZA SECURITY WEBSITE
+   STYLE.CSS
+   PART 1 OF 4
+=================================================== */
+
+/* RESET */
 
 *{
     margin:0;
@@ -14,37 +17,68 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0f0f0f;
+    font-family:'Poppins',sans-serif;
+    background:#2B2B2B;
     color:#ffffff;
-    line-height:1.7;
+    line-height:1.6;
+    overflow-x:hidden;
 }
+
+/* CONTAINER */
 
 .container{
     width:90%;
-    max-width:1300px;
+    max-width:1200px;
     margin:auto;
 }
+
+/* LINKS */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* IMAGES */
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* SECTIONS */
 
 section{
     padding:90px 0;
 }
 
-h1,h2,h3{
-    color:silver;
-}
+/* TITLES */
 
-h2{
+.section-title{
     text-align:center;
-    margin-bottom:20px;
-    font-size:2.4rem;
+    margin-bottom:60px;
 }
 
-p{
-    color:#d7d7d7;
+.section-title h2{
+
+    font-size:42px;
+
+    color:#ffffff;
+
+    margin-bottom:15px;
+
 }
+
+.section-title p{
+
+    color:#C0C0C0;
+
+    font-size:18px;
+
+}
+
 /* ==========================
-HEADER
+   HEADER
 ========================== */
 
 header{
@@ -57,17 +91,7 @@ header{
 
     width:100%;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 6%;
-
-    background:rgba(15,15,15,.95);
-
-    backdrop-filter:blur(10px);
+    background:#1E1E1E;
 
     border-bottom:2px solid #25D366;
 
@@ -75,13 +99,31 @@ header{
 
 }
 
-.logo img{
+header .container{
 
-    height:95px;
+    display:flex;
 
-    width:auto;
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:85px;
 
 }
+
+/* LOGO */
+
+.logo img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+}
+
+/* MENU */
 
 nav ul{
 
@@ -95,11 +137,9 @@ nav ul{
 
 nav ul li a{
 
-    color:white;
+    color:#ffffff;
 
-    text-decoration:none;
-
-    font-weight:bold;
+    font-weight:500;
 
     transition:.3s;
 
@@ -111,360 +151,24 @@ nav ul li a:hover{
 
 }
 
+/* HAMBURGER */
+
 .menu-toggle{
 
     display:none;
 
     font-size:34px;
 
-    cursor:pointer;
-
-   }
-/* ==========================
-HERO SECTION
-========================== */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:180px 20px 100px;
-
-    background:
-    linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.80)),
-    url("images/01-team-soweto-towers.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-}
-
-.hero-content{
-
-    max-width:900px;
-
-}
-
-.hero h1{
-
-    font-size:58px;
-
-    color:white;
-
-    margin-bottom:20px;
-
-    text-shadow:0 4px 10px rgba(0,0,0,.6);
-
-}
-
-.hero p{
-
-    font-size:24px;
-
-    color:#e5e5e5;
-
-    max-width:800px;
-
-    margin:auto;
-
-       }
-/* ==========================
-ABOUT
-========================== */
-
-.about{
-
-    background:#151515;
-
-}
-
-.about p{
-
-    max-width:900px;
-
-    margin:20px auto;
-
-    text-align:center;
-
-    font-size:18px;
-
-}
-
-/* ==========================
-SERVICES
-========================== */
-
-.services{
-
-    background:#101010;
-
-}
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:25px;
-
-    margin-top:40px;
-
-}
-
-.service-card{
-
-    background:#1b1b1b;
-
-    padding:30px;
-
-    border-radius:15px;
-
-    border:1px solid #333;
-
-    transition:.4s;
-
-}
-
-.service-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:#25D366;
-
-    box-shadow:0 10px 25px rgba(37,211,102,.25);
-
-}
-
-.service-card h3{
-
-    color:#25D366;
-
-    margin-bottom:15px;
-
-}
-/* ==========================
-GALLERY
-========================== */
-
-.gallery{
-
-    background:#151515;
-
-}
-
-.gallery-text{
-
-    text-align:center;
-
-    max-width:900px;
-
-    margin:0 auto 40px;
-
-    font-size:18px;
-
-    color:#d0d0d0;
-
-}
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:25px;
-
-}
-
-.gallery-grid img{
-
-    width:100%;
-
-    height:260px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    border:2px solid #2a2a2a;
+    color:#ffffff;
 
     cursor:pointer;
 
-    transition:.4s ease;
-
-}
-.gallery-grid img:hover{
-
-    transform:scale(1.04);
-
-    border-color:#25D366;
-
-    box-shadow:0 15px 35px rgba(37,211,102,.35);
-
 }
 
-/* ==========================
-CONTACT
-========================== */
+/* SPACE BELOW FIXED HEADER */
 
-.contact{
+body{
 
-    background:#101010;
-
-    text-align:center;
-
-}
-
-.contact-details{
-
-    margin-top:30px;
-
-}
-
-.contact-details p{
-
-    margin:12px 0;
-
-    font-size:18px;
-
-        }
-/* ==========================
-FLOATING BUTTONS
-========================== */
-
-.floating-whatsapp,
-.floating-call{
-
-    position:fixed;
-
-    right:20px;
-
-    width:60px;
-
-    height:60px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    text-decoration:none;
-
-    font-size:28px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
-
-    transition:.3s;
-
-    z-index:999;
-
-}
-
-.floating-whatsapp{
-
-    bottom:95px;
-
-    background:#25D366;
-
-    color:#fff;
-
-}
-
-.floating-call{
-
-    bottom:20px;
-
-    background:silver;
-
-    color:#111;
-
-}
-
-.floating-whatsapp:hover,
-.floating-call:hover{
-
-    transform:scale(1.1);
+    padding-top:85px;
 
     }
-/* ==========================
-FOOTER
-========================== */
-
-footer{
-
-    background:#080808;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    border-top:2px solid #25D366;
-
-}
-
-footer img{
-
-    height:90px;
-
-    margin-bottom:20px;
-
-}
-
-footer p{
-
-    margin:10px 0;
-
-    color:#bbb;
-
-}
-
-/* ==========================
-MOBILE
-========================== */
-
-@media (max-width:768px){
-
-    .logo img{
-        height:75px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-}
