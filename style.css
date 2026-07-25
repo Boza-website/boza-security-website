@@ -172,3 +172,149 @@ body{
     padding-top:85px;
 
     }
+/* ===================================================
+   HERO SECTION
+=================================================== */
+
+.hero{
+    min-height:calc(100vh - 85px);
+    background:url("images/team-soweto-towers1.jpg") center center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-overlay{
+    width:100%;
+    min-height:calc(100vh - 85px);
+    background:rgba(30,30,30,.72);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    text-align:center;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:58px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:20px;
+    color:#FFFFFF;
+}
+
+.hero h2{
+    font-size:28px;
+    color:#25D366;
+    margin-bottom:25px;
+    font-weight:500;
+}
+
+.hero p{
+    font-size:20px;
+    color:#E5E5E5;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 35px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:#000;
+}
+
+.call{
+    background:#C0C0C0;
+    color:#111;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-overlay{
+        min-height:auto;
+        padding:90px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:240px;
+    }
+
+                    }
