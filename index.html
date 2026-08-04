@@ -1,1143 +1,1812 @@
-<!DOCTYPE html>
-<html lang="en-ZA">
+/* =========================================================
+   BOZA SATELLITE & SECURITY
+   PREMIUM HIGH-TECH WEBSITE
+   DARK GREY • SILVER • GREEN • BLACK
+========================================================= */
+
+:root {
+    --bg: #292b2b;
+    --bg2: #222424;
+    --black: #080909;
+    --black2: #111313;
 
-<head>
+    --card: #303333;
+    --card2: #272929;
 
-    <meta charset="UTF-8">
+    --green: #20d96f;
+    --green-dark: #0b9348;
+    --green-soft: rgba(32, 217, 111, 0.16);
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    --silver: #bfc4c4;
+    --silver-light: #e8ebeb;
+    --silver-dark: #777d7d;
 
-    <title>
-        Boza Satellite & Security | CCTV, Alarms & Gate Motors Johannesburg
-    </title>
+    --white: #ffffff;
+    --text: #d3d6d6;
+    --muted: #9da3a3;
 
-    <meta
-        name="description"
-        content="Boza Satellite and Security provides professional CCTV, Ajax alarm systems, Centurion gate motors, garage door motors, electric fencing, network cabling and security maintenance in South Johannesburg, Soweto, North Johannesburg and surrounding areas."
-    >
+    --border: rgba(191, 196, 196, 0.20);
 
-    <meta
-        name="keywords"
-        content="CCTV installation Johannesburg, CCTV installation Soweto, security company Johannesburg, security installers Johannesburg, South Johannesburg security, North Johannesburg security, Hikvision CCTV Johannesburg, Ajax alarm systems Johannesburg, Centurion D4 gate motor Johannesburg, garage door motor installation Johannesburg, electric fence Johannesburg, network cabling Johannesburg, security maintenance Johannesburg"
-    >
+    --shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
 
-    <meta name="author" content="Boza Satellite and Security Accredited Technicians (PTY) LTD">
+    --green-glow:
+        0 0 20px rgba(32, 217, 111, 0.25);
+}
 
-    <meta name="robots" content="index, follow">
 
-    <meta name="theme-color" content="#292b2b">
+/* =========================================================
+   RESET
+========================================================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Google Font -->
+html {
+    scroll-behavior: smooth;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+body {
+    font-family: 'Poppins', sans-serif;
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(32, 217, 111, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(190, 195, 195, 0.05),
+            transparent 30%
+        ),
+        var(--bg);
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    color: var(--text);
 
+    line-height: 1.7;
 
-    <!-- Font Awesome -->
+    overflow-x: hidden;
+}
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+img {
+    display: block;
+    max-width: 100%;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <!-- Main CSS -->
+ul {
+    list-style: none;
+}
 
-    <link rel="stylesheet" href="style.css">
 
+/* =========================================================
+   GLOBAL CONTAINER
+========================================================= */
 
-</head>
+.container {
+    width: 92%;
+    max-width: 1220px;
+    margin: auto;
+}
 
 
-<body>
+/* =========================================================
+   SECTION
+========================================================= */
 
+.section {
+    position: relative;
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    padding: 105px 0;
 
-<header class="site-header">
+    overflow: hidden;
+}
 
-    <div class="container header-container">
+.section::before {
+    content: "";
 
+    position: absolute;
 
-        <!-- LOGO -->
+    top: 0;
+    left: 50%;
 
-        <a href="#home" class="logo">
+    width: 85%;
+    height: 1px;
 
-            <img
-                src="boza-satellite-security-logo.jpg"
-                alt="Boza Satellite and Security logo Johannesburg"
-            >
+    transform: translateX(-50%);
 
-        </a>
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--silver-dark),
+            var(--green),
+            var(--silver-dark),
+            transparent
+        );
 
+    opacity: 0.65;
+}
 
-        <!-- MOBILE MENU -->
 
-        <button
-            class="menu-toggle"
-            id="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
-            <span></span>
-            <span></span>
-            <span></span>
+.section-title {
+    text-align: center;
 
-        </button>
+    max-width: 900px;
 
+    margin: 0 auto 60px;
+}
 
-        <!-- NAVIGATION -->
+.section-title span {
+    display: inline-block;
 
-        <nav id="navbar" aria-label="Main navigation">
+    color: var(--green);
 
-            <ul>
+    font-size: 0.78rem;
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+    font-weight: 800;
 
-                <li>
-                    <a href="#about">About Us</a>
-                </li>
+    letter-spacing: 3px;
 
-                <li>
-                    <a href="#services">Services</a>
-                </li>
+    text-transform: uppercase;
 
-                <li>
-                    <a href="#gallery">Gallery</a>
-                </li>
+    margin-bottom: 12px;
 
-                <li>
-                    <a href="#contact">Contact Us</a>
-                </li>
+    text-shadow:
+        0 0 12px rgba(32, 217, 111, 0.4);
+}
 
-            </ul>
+.section-title h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
 
-        </nav>
+    line-height: 1.15;
 
+    margin-bottom: 15px;
 
-    </div>
+    color: var(--silver-light);
 
-</header>
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.5);
+}
 
+.section-title h2::after {
+    content: "";
 
+    display: block;
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+    width: 65px;
+    height: 3px;
 
-<section class="hero" id="home">
+    margin: 15px auto 0;
 
-    <div class="hero-overlay">
+    background:
+        linear-gradient(
+            90deg,
+            var(--green-dark),
+            var(--green),
+            var(--silver)
+        );
 
-        <div class="container">
+    box-shadow:
+        0 0 10px rgba(32, 217, 111, 0.35);
+}
 
-            <div class="hero-content">
+.section-title p {
+    color: var(--muted);
 
-                <div class="hero-text">
+    font-size: 0.95rem;
+}
 
 
-                    <div class="hero-tag">
-                        SECURITY • TECHNOLOGY • PEACE OF MIND
-                    </div>
+/* =========================================================
+   HEADER
+========================================================= */
 
+.site-header {
+    position: sticky;
 
-                    <h1>
+    top: 0;
 
-                        Professional
-                        <strong>Security Solutions</strong>
-                        in Johannesburg
+    z-index: 9999;
 
-                    </h1>
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 9, 9, 0.98),
+            rgba(17, 19, 19, 0.94)
+        );
 
+    border-bottom:
+        1px solid rgba(191, 196, 196, 0.25);
 
-                    <h2>
+    backdrop-filter: blur(14px);
 
-                        Boza Satellite and Security
-                        Accredited Technicians (PTY) LTD
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
 
-                    </h2>
+.header-container {
+    min-height: 125px;
 
+    position: relative;
 
-                    <p>
+    display: flex;
 
-                        Professional security installations and maintenance
-                        for homes, businesses and properties across
-                        <strong>South Johannesburg, Soweto, North Johannesburg
-                        and surrounding areas.</strong>
+    align-items: center;
 
-                    </p>
+    justify-content: space-between;
+}
 
 
-                    <div class="hero-buttons">
+/* =========================================================
+   LARGE CENTRED LOGO
+========================================================= */
 
+.logo {
+    position: absolute;
 
-                        <a
-                            href="https://wa.me/27840366682"
-                            class="btn whatsapp"
-                            target="_blank"
-                            rel="noopener"
-                        >
+    left: 50%;
+    top: 50%;
 
-                            <i class="fab fa-whatsapp"></i>
+    transform: translate(-50%, -50%);
 
-                            WhatsApp Us
+    width: 260px;
 
-                        </a>
+    display: flex;
 
+    align-items: center;
 
-                        <a
-                            href="tel:+27840366682"
-                            class="btn call"
-                        >
+    justify-content: center;
 
-                            <i class="fas fa-phone"></i>
+    z-index: 20;
+}
 
-                            Call Now
+.logo img {
+    width: 260px;
 
-                        </a>
+    height: 115px;
 
+    object-fit: contain;
 
-                    </div>
+    border-radius: 10px;
 
+    filter:
+        drop-shadow(
+            0 0 10px rgba(32, 217, 111, 0.25)
+        );
 
-                </div>
+    transition: 0.4s ease;
+}
 
-            </div>
+.logo:hover img {
+    transform: scale(1.04);
 
-        </div>
+    filter:
+        drop-shadow(
+            0 0 18px rgba(32, 217, 111, 0.50)
+        );
+}
 
-    </div>
 
-</section>
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
+#navbar {
+    width: 100%;
+}
 
+#navbar ul {
+    display: flex;
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+    align-items: center;
 
-<section id="about" class="section about">
+    justify-content: space-between;
 
-    <div class="container">
+    width: 100%;
+}
 
+#navbar li:nth-child(1),
+#navbar li:nth-child(2) {
+    margin-right: auto;
+}
 
-        <div class="section-title">
+#navbar li:nth-child(3),
+#navbar li:nth-child(4),
+#navbar li:nth-child(5) {
+    margin-left: auto;
+}
 
-            <span>ABOUT BOZA</span>
+#navbar a {
+    position: relative;
 
-            <h2>
-                Security Specialists You Can Trust
-            </h2>
+    color: var(--silver);
 
-            <p>
-                Professional security solutions for homes and businesses
-                throughout Johannesburg.
-            </p>
+    font-size: 0.88rem;
 
-        </div>
+    font-weight: 600;
 
+    padding: 12px 6px;
 
+    transition: 0.3s ease;
+}
 
-        <div class="about-grid">
+#navbar a::after {
+    content: "";
 
+    position: absolute;
 
-            <!-- TEAM IMAGE -->
+    left: 0;
+    bottom: 2px;
 
-            <div class="about-image">
+    width: 0;
+    height: 2px;
 
-                <img
-                    src="boza-security-team-soweto.jpg"
-                    alt="Boza Security team in Soweto Johannesburg"
-                    loading="lazy"
-                >
+    background:
+        linear-gradient(
+            90deg,
+            var(--green-dark),
+            var(--green),
+            var(--silver)
+        );
 
-            </div>
+    box-shadow:
+        0 0 8px rgba(32, 217, 111, 0.55);
 
+    transition: 0.35s ease;
+}
 
+#navbar a:hover {
+    color: var(--green);
+}
 
-            <!-- ABOUT TEXT -->
+#navbar a:hover::after {
+    width: 100%;
+}
 
-            <div class="about-text">
 
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
 
-                <h3>
-                    Protecting Homes & Businesses Since 2014
-                </h3>
+.menu-toggle {
+    display: none;
 
+    width: 48px;
+    height: 48px;
 
-                <p>
+    align-items: center;
+    justify-content: center;
 
-                    Boza Satellite and Security Accredited Technicians
-                    (PTY) LTD provides professional security installation,
-                    upgrades and maintenance services for residential,
-                    commercial and property clients.
+    flex-direction: column;
 
-                </p>
+    gap: 6px;
 
+    background: var(--black2);
 
-                <p>
+    border:
+        1px solid var(--silver-dark);
 
-                    Our business is based in the
-                    <strong>South of Johannesburg</strong> and we proudly
-                    serve clients throughout <strong>Soweto, South
-                    Johannesburg, North Johannesburg and surrounding
-                    areas.</strong>
+    border-radius: 7px;
 
-                </p>
+    cursor: pointer;
 
+    position: relative;
 
-                <p>
+    z-index: 10001;
+}
 
-                    We specialise in reliable security technology,
-                    quality workmanship and practical solutions designed
-                    around each client's property and security needs.
+.menu-toggle span {
+    width: 24px;
 
-                </p>
+    height: 2px;
 
+    background: var(--green);
 
+    display: block;
 
-                <div class="about-features">
+    transition: 0.3s ease;
+}
 
 
-                    <div>
+/* =========================================================
+   HERO
+========================================================= */
 
-                        <i class="fas fa-shield-halved"></i>
+.hero {
+    position: relative;
 
-                        Certified Technicians
+    min-height: 760px;
 
-                    </div>
+    display: flex;
 
+    align-items: center;
 
-                    <div>
+    overflow: hidden;
 
-                        <i class="fas fa-camera"></i>
+    background:
+        linear-gradient(
+            115deg,
+            #080909 0%,
+            #292b2b 52%,
+            #111313 100%
+        );
+}
 
-                        CCTV Specialists
+.hero::before {
+    content: "";
 
-                    </div>
+    position: absolute;
 
+    left: -20%;
+    top: 0;
 
-                    <div>
+    width: 140%;
+    height: 2px;
 
-                        <i class="fas fa-house-lock"></i>
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green-dark),
+            var(--green),
+            var(--silver),
+            transparent
+        );
 
-                        Residential Security
+    box-shadow:
+        0 0 20px rgba(32, 217, 111, 0.35);
 
-                    </div>
+    animation:
+        scanLine 7s linear infinite;
+}
 
+.hero::after {
+    content: "";
 
-                    <div>
+    position: absolute;
 
-                        <i class="fas fa-building-shield"></i>
+    right: -280px;
+    top: 50%;
 
-                        Commercial Security
+    width: 650px;
+    height: 650px;
 
-                    </div>
+    transform: translateY(-50%);
 
+    border-radius: 50%;
 
-                </div>
+    border:
+        1px solid rgba(191, 196, 196, 0.16);
 
+    box-shadow:
+        0 0 0 35px rgba(32, 217, 111, 0.025),
+        0 0 0 70px rgba(191, 196, 196, 0.018),
+        0 0 0 105px rgba(32, 217, 111, 0.012);
 
-            </div>
+    animation:
+        ringRotate 35s linear infinite;
+}
 
+.hero-overlay {
+    position: absolute;
 
-        </div>
+    inset: 0;
 
-    </div>
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.87),
+            rgba(0, 0, 0, 0.42),
+            rgba(0, 0, 0, 0.70)
+        );
+}
 
-</section>
+.hero-content {
+    position: relative;
 
+    z-index: 3;
+}
 
+.hero-text {
+    max-width: 850px;
 
-<!-- =====================================================
-     WHY CHOOSE BOZA
-===================================================== -->
+    padding: 90px 0;
+}
 
-<section class="section why-us">
+.hero-tag {
+    display: inline-block;
 
-    <div class="container">
+    color: var(--green);
 
+    border-left:
+        3px solid var(--green);
 
-        <div class="section-title">
+    padding-left: 14px;
 
-            <span>WHY BOZA?</span>
+    font-size: 0.8rem;
 
-            <h2>
-                Security Done Properly
-            </h2>
+    font-weight: 800;
 
-            <p>
-                Professional service from installation through to
-                ongoing maintenance.
-            </p>
+    letter-spacing: 3px;
 
-        </div>
+    text-transform: uppercase;
 
+    margin-bottom: 20px;
 
+    text-shadow:
+        0 0 10px rgba(32, 217, 111, 0.35);
+}
 
-        <div class="why-grid">
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
 
+    line-height: 1.04;
 
-            <div class="why-card">
+    margin-bottom: 22px;
 
-                <i class="fas fa-user-shield"></i>
+    color: var(--silver-light);
 
-                <h3>
-                    Certified Technicians
-                </h3>
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.7);
+}
 
-                <p>
-                    Professionally trained technicians delivering
-                    quality security installations.
-                </p>
+.hero h1 strong {
+    color: var(--green);
 
-            </div>
+    text-shadow:
+        0 0 18px rgba(32, 217, 111, 0.35);
+}
 
+.hero h2 {
+    font-size: clamp(1rem, 2vw, 1.4rem);
 
+    font-weight: 500;
 
-            <div class="why-card">
+    color: var(--silver);
 
-                <i class="fas fa-microchip"></i>
+    margin-bottom: 20px;
+}
 
-                <h3>
-                    Quality Technology
-                </h3>
+.hero p {
+    max-width: 780px;
 
-                <p>
-                    We work with trusted security technology and
-                    recognised industry brands.
-                </p>
+    color: var(--text);
 
-            </div>
+    font-size: 1rem;
 
+    margin-bottom: 32px;
+}
 
+.hero-buttons {
+    display: flex;
 
-            <div class="why-card">
+    flex-wrap: wrap;
 
-                <i class="fas fa-screwdriver-wrench"></i>
+    gap: 15px;
+}
 
-                <h3>
-                    Professional Workmanship
-                </h3>
 
-                <p>
-                    Neat installations, careful setup and attention
-                    to the details that matter.
-                </p>
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-            </div>
+.btn {
+    position: relative;
 
+    min-width: 170px;
 
+    padding: 14px 25px;
 
-            <div class="why-card">
+    border-radius: 7px;
 
-                <i class="fas fa-headset"></i>
+    display: inline-flex;
 
-                <h3>
-                    Reliable Support
-                </h3>
+    align-items: center;
 
-                <p>
-                    Installation, troubleshooting, upgrades and
-                    ongoing security system maintenance.
-                </p>
+    justify-content: center;
 
-            </div>
+    gap: 10px;
 
+    font-weight: 700;
 
-        </div>
+    overflow: hidden;
 
-    </div>
+    transition: 0.35s ease;
+}
 
-</section>
+.btn:hover {
+    transform: translateY(-4px);
+}
 
+.btn.whatsapp {
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-dark),
+            var(--green)
+        );
 
+    color: #06130b;
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
+    box-shadow:
+        0 8px 25px rgba(32, 217, 111, 0.25);
+}
 
-<section id="services" class="section services">
+.btn.whatsapp:hover {
+    box-shadow:
+        0 12px 35px rgba(32, 217, 111, 0.45);
+}
 
-    <div class="container">
+.btn.call {
+    color: var(--silver-light);
 
+    background:
+        linear-gradient(
+            135deg,
+            rgba(191, 196, 196, 0.12),
+            rgba(0, 0, 0, 0.25)
+        );
 
-        <div class="section-title">
+    border:
+        1px solid var(--silver-dark);
+}
 
-            <span>OUR SERVICES</span>
+.btn.call:hover {
+    color: var(--green);
 
-            <h2>
-                Security Solutions for Johannesburg
-            </h2>
+    border-color: var(--green);
 
-            <p>
-                From CCTV and alarms to access automation and
-                network infrastructure.
-            </p>
+    box-shadow:
+        var(--green-glow);
+}
 
-        </div>
 
+/* =========================================================
+   ABOUT
+========================================================= */
 
+.about {
+    background:
+        linear-gradient(
+            145deg,
+            #292b2b,
+            #222424
+        );
+}
 
-        <div class="services-grid">
+.about-grid {
+    display: grid;
 
+    grid-template-columns: 1fr 1fr;
 
-            <!-- CCTV -->
+    gap: 70px;
 
-            <article class="service-card">
+    align-items: center;
+}
 
-                <img
-                    src="cctv-camera-installation-johannesburg.jpg"
-                    alt="CCTV camera installation in Johannesburg"
-                    loading="lazy"
-                >
+.about-image {
+    position: relative;
+}
 
-                <div class="service-content">
+.about-image::before {
+    content: "";
 
-                    <i class="fas fa-video"></i>
+    position: absolute;
 
-                    <h3>
-                        CCTV Installation
-                    </h3>
+    left: -15px;
+    bottom: -15px;
 
-                    <p>
-                        Professional CCTV installation, upgrades,
-                        remote viewing setup and maintenance for homes
-                        and businesses in Johannesburg.
-                    </p>
+    width: 78%;
+    height: 78%;
 
-                </div>
+    border-left:
+        3px solid var(--green);
 
-            </article>
+    border-bottom:
+        3px solid var(--silver);
 
+    z-index: 0;
+}
 
+.about-image::after {
+    content: "";
 
-            <!-- HIKVISION -->
+    position: absolute;
 
-            <article class="service-card">
+    right: -10px;
+    top: -10px;
 
-                <img
-                    src="hikvision-cctv-camera-johannesburg.jpg"
-                    alt="Hikvision CCTV camera installation Johannesburg"
-                    loading="lazy"
-                >
+    width: 65px;
+    height: 65px;
 
-                <div class="service-content">
+    border-top:
+        2px solid var(--silver);
 
-                    <i class="fas fa-camera"></i>
+    border-right:
+        2px solid var(--green);
 
-                    <h3>
-                        Hikvision CCTV Systems
-                    </h3>
+    z-index: 2;
+}
 
-                    <p>
-                        Quality Hikvision CCTV solutions designed to
-                        help you monitor your property from wherever
-                        you are.
-                    </p>
+.about-image img {
+    position: relative;
 
-                </div>
+    z-index: 1;
 
-            </article>
+    width: 100%;
 
+    border:
+        1px solid var(--border);
 
+    border-radius: 9px;
 
-            <!-- AJAX -->
+    box-shadow:
+        var(--shadow);
 
-            <article class="service-card">
+    transition: 0.5s ease;
+}
 
-                <img
-                    src="ajax-alarm-system-installation-johannesburg.jpg"
-                    alt="Ajax alarm system installation Johannesburg"
-                    loading="lazy"
-                >
+.about-image:hover img {
+    transform: scale(1.025);
+}
 
-                <div class="service-content">
+.about-text h3 {
+    color: var(--silver-light);
 
-                    <i class="fas fa-shield-halved"></i>
+    font-size: 1.9rem;
 
-                    <h3>
-                        Ajax Alarm Systems
-                    </h3>
+    margin-bottom: 20px;
+}
 
-                    <p>
-                        Professional Ajax alarm system installation,
-                        configuration and maintenance for residential
-                        and commercial properties.
-                    </p>
+.about-text p {
+    color: var(--text);
 
-                </div>
+    margin-bottom: 16px;
+}
 
-            </article>
+.about-features {
+    display: grid;
 
+    grid-template-columns: 1fr 1fr;
 
+    gap: 14px;
 
-            <!-- CENTURION -->
+    margin-top: 30px;
+}
 
-            <article class="service-card">
+.about-features div {
+    display: flex;
 
-                <img
-                    src="centurion-d4-smart-gate-motor.jpg"
-                    alt="Centurion D4 Smart gate motor installation Johannesburg"
-                    loading="lazy"
-                >
+    align-items: center;
 
-                <div class="service-content">
+    gap: 10px;
 
-                    <i class="fas fa-warehouse"></i>
+    color: var(--silver);
 
-                    <h3>
-                        Centurion Gate Motors
-                    </h3>
+    font-size: 0.88rem;
+}
 
-                    <p>
-                        Professional Centurion gate motor installation,
-                        setup, repairs, upgrades and maintenance.
-                    </p>
+.about-features i {
+    color: var(--green);
 
-                </div>
+    text-shadow:
+        0 0 8px rgba(32, 217, 111, 0.4);
+}
 
-            </article>
 
+/* =========================================================
+   SERVICES
+========================================================= */
 
+.services {
+    background:
+        linear-gradient(
+            145deg,
+            #1d1f1f,
+            #292b2b
+        );
+}
 
-            <!-- GARAGE -->
+.services-grid {
+    display: grid;
 
-            <article class="service-card">
+    grid-template-columns:
+        repeat(3, 1fr);
 
-                <img
-                    src="garage-door-motor-installation-johannesburg.jpg"
-                    alt="Garage door motor installation Johannesburg"
-                    loading="lazy"
-                >
+    gap: 25px;
+}
 
-                <div class="service-content">
+.service-card {
+    position: relative;
 
-                    <i class="fas fa-garage"></i>
+    background:
+        linear-gradient(
+            145deg,
+            #363939,
+            #222424
+        );
 
-                    <h3>
-                        Garage Door Motors
-                    </h3>
+    border:
+        1px solid var(--border);
 
-                    <p>
-                        Garage door motor installations, replacements,
-                        servicing and maintenance for residential
-                        properties.
-                    </p>
+    border-radius: 10px;
 
-                </div>
+    overflow: hidden;
 
-            </article>
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.32);
 
+    transition: 0.4s ease;
+}
 
+.service-card::before {
+    content: "";
 
-            <!-- NETWORK -->
+    position: absolute;
 
-            <article class="service-card">
+    top: 0;
+    left: -100%;
 
-                <img
-                    src="network-cabling-installation-johannesburg.jpg"
-                    alt="Network cabling installation Johannesburg"
-                    loading="lazy"
-                >
+    width: 100%;
+    height: 3px;
 
-                <div class="service-content">
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green),
+            var(--silver),
+            transparent
+        );
 
-                    <i class="fas fa-network-wired"></i>
+    z-index: 4;
 
-                    <h3>
-                        Network Cabling
-                    </h3>
+    transition: 0.6s ease;
+}
 
-                    <p>
-                        Structured network cabling and connectivity
-                        solutions supporting modern security and
-                        communication systems.
-                    </p>
+.service-card:hover::before {
+    left: 100%;
+}
 
-                </div>
+.service-card:hover {
+    transform:
+        translateY(-10px);
 
-            </article>
+    border-color:
+        var(--green);
 
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(32, 217, 111, 0.08);
+}
 
+.service-card > img {
+    width: 100%;
 
-        </div>
+    height: 225px;
 
-    </div>
+    object-fit: cover;
 
-</section>
+    filter:
+        brightness(0.82)
+        contrast(1.05);
 
+    transition: 0.5s ease;
+}
 
+.service-card:hover > img {
+    transform: scale(1.06);
 
-<!-- =====================================================
-     ELECTRIC FENCE / SECURITY MAINTENANCE
-===================================================== -->
+    filter:
+        brightness(1)
+        contrast(1.05);
+}
 
-<section class="section about">
+.service-content {
+    padding: 26px;
+}
 
-    <div class="container">
+.service-content > i {
+    color: var(--green);
 
+    font-size: 1.4rem;
 
-        <div class="section-title">
+    margin-bottom: 10px;
 
-            <span>MORE SECURITY SOLUTIONS</span>
+    text-shadow:
+        0 0 12px rgba(32, 217, 111, 0.4);
+}
 
-            <h2>
-                Protection Beyond CCTV
-            </h2>
+.service-content h3 {
+    color: var(--silver-light);
 
-            <p>
-                We help secure the perimeter and keep your security
-                systems operating properly.
-            </p>
+    font-size: 1.2rem;
 
-        </div>
+    margin-bottom: 10px;
+}
 
+.service-content p {
+    color: var(--muted);
 
+    font-size: 0.88rem;
+}
 
-        <div class="why-grid">
 
+/* =========================================================
+   WHY US
+========================================================= */
 
-            <div class="why-card">
+.why-us {
+    background:
+        #292b2b;
+}
 
-                <i class="fas fa-bolt"></i>
+.why-grid {
+    display: grid;
 
-                <h3>
-                    Electric Fencing
-                </h3>
+    grid-template-columns:
+        repeat(4, 1fr);
 
-                <p>
-                    Electric fence installation, maintenance and
-                    security perimeter solutions.
-                </p>
+    gap: 20px;
+}
 
-            </div>
+.why-card {
+    position: relative;
 
+    padding: 35px 22px;
 
+    text-align: center;
 
-            <div class="why-card">
+    background:
+        linear-gradient(
+            145deg,
+            #353838,
+            #252727
+        );
 
-                <i class="fas fa-screwdriver-wrench"></i>
+    border:
+        1px solid var(--border);
 
-                <h3>
-                    Security Maintenance
-                </h3>
+    border-radius: 9px;
 
-                <p>
-                    Troubleshooting, repairs, servicing and maintenance
-                    of existing security systems.
-                </p>
+    overflow: hidden;
 
-            </div>
+    transition: 0.35s ease;
+}
 
+.why-card:hover {
+    transform:
+        translateY(-8px);
 
+    border-color:
+        var(--green);
 
-            <div class="why-card">
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
+}
 
-                <i class="fas fa-mobile-screen-button"></i>
+.why-card i {
+    color: var(--green);
 
-                <h3>
-                    Remote Monitoring
-                </h3>
+    font-size: 2rem;
 
-                <p>
-                    Remote CCTV viewing solutions that help you keep
-                    an eye on your property when you're away.
-                </p>
+    margin-bottom: 18px;
 
-            </div>
+    text-shadow:
+        0 0 15px rgba(32, 217, 111, 0.4);
+}
 
+.why-card h3 {
+    color: var(--silver-light);
 
+    font-size: 1.05rem;
 
-            <div class="why-card">
+    margin-bottom: 10px;
+}
 
-                <i class="fas fa-wifi"></i>
+.why-card p {
+    color: var(--muted);
 
-                <h3>
-                    Connectivity Assistance
-                </h3>
+    font-size: 0.85rem;
+}
 
-                <p>
-                    Assistance with security system connectivity,
-                    network setup and Wi-Fi related security issues.
-                </p>
 
-            </div>
+/* =========================================================
+   GALLERY
+========================================================= */
 
+.gallery {
+    background:
+        #1d1f1f;
+}
 
-        </div>
+.gallery-grid {
+    display: grid;
 
-    </div>
+    grid-template-columns:
+        repeat(4, 1fr);
 
-</section>
+    gap: 15px;
+}
 
+.gallery-grid img {
+    width: 100%;
 
+    height: 230px;
 
-<!-- =====================================================
-     GALLERY
-===================================================== -->
+    object-fit: cover;
 
-<section id="gallery" class="section gallery">
+    border-radius: 7px;
 
-    <div class="container">
+    border:
+        1px solid var(--border);
 
+    filter:
+        brightness(0.82)
+        saturate(0.85);
 
-        <div class="section-title">
+    transition: 0.4s ease;
+}
 
-            <span>OUR WORK</span>
+.gallery-grid img:hover {
+    transform:
+        scale(1.035);
 
-            <h2>
-                Recent Security Installations
-            </h2>
+    filter:
+        brightness(1)
+        saturate(1.1);
 
-            <p>
-                A look at some of our security installation work.
-            </p>
+    border-color:
+        var(--green);
 
-        </div>
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 18px rgba(32, 217, 111, 0.1);
+}
 
 
+/* =========================================================
+   BRANDS
+========================================================= */
 
-        <div class="gallery-grid">
+.brands {
+    background:
+        linear-gradient(
+            135deg,
+            #080909,
+            #181a1a
+        );
+}
 
+.brands-list {
+    display: flex;
 
-            <img
-                src="boza-security-team-johannesburg.jpg"
-                alt="Boza Security team Johannesburg"
-                loading="lazy"
-            >
+    flex-wrap: wrap;
 
+    justify-content: center;
 
-            <img
-                src="boza-security-team-soweto.jpg"
-                alt="Boza Security team Soweto"
-                loading="lazy"
-            >
+    gap: 15px;
+}
 
+.brands-list span {
+    padding: 13px 25px;
 
-            <img
-                src="boza-security-technician-johannesburg.jpg"
-                alt="Boza security technician Johannesburg"
-                loading="lazy"
-            >
+    background:
+        linear-gradient(
+            135deg,
+            #292c2c,
+            #111313
+        );
 
+    border:
+        1px solid var(--silver-dark);
 
-            <img
-                src="cctv-camera-installation-johannesburg.jpg"
-                alt="CCTV camera installation Johannesburg"
-                loading="lazy"
-            >
+    border-radius: 5px;
 
+    color: var(--silver);
 
-            <img
-                src="hikvision-cctv-camera-johannesburg.jpg"
-                alt="Hikvision CCTV camera Johannesburg"
-                loading="lazy"
-            >
+    font-weight: 600;
 
+    transition: 0.35s ease;
+}
 
-            <img
-                src="indoor-cctv-camera-installation.jpg"
-                alt="Indoor CCTV camera installation"
-                loading="lazy"
-            >
+.brands-list span:hover {
+    color: var(--green);
 
+    border-color:
+        var(--green);
 
-            <img
-                src="centurion-d4-smart-gate-motor.jpg"
-                alt="Centurion D4 Smart gate motor installation"
-                loading="lazy"
-            >
+    transform:
+        translateY(-4px);
 
+    box-shadow:
+        var(--green-glow);
+}
 
-            <img
-                src="garage-door-motor-installation-johannesburg.jpg"
-                alt="Garage door motor installation Johannesburg"
-                loading="lazy"
-            >
 
+/* =========================================================
+   CONTACT
+========================================================= */
 
-            <img
-                src="ajax-alarm-system-installation-johannesburg.jpg"
-                alt="Ajax alarm system installation Johannesburg"
-                loading="lazy"
-            >
+.contact {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(32, 217, 111, 0.08),
+            transparent 45%
+        ),
+        #292b2b;
+}
 
+.contact-grid {
+    display: grid;
 
-            <img
-                src="network-cabling-installation-johannesburg.jpg"
-                alt="Network cabling installation Johannesburg"
-                loading="lazy"
-            >
+    grid-template-columns:
+        repeat(3, 1fr);
 
+    gap: 25px;
+}
 
-        </div>
+.contact-card {
+    padding: 38px 20px;
 
-    </div>
+    text-align: center;
 
-</section>
+    background:
+        linear-gradient(
+            145deg,
+            #333636,
+            #181a1a
+        );
 
+    border:
+        1px solid var(--border);
 
+    border-radius: 10px;
 
-<!-- =====================================================
-     BRANDS
-===================================================== -->
+    transition: 0.35s ease;
+}
 
-<section class="section brands">
+.contact-card:hover {
+    transform:
+        translateY(-8px);
 
-    <div class="container">
+    border-color:
+        var(--green);
 
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
 
-        <div class="section-title">
+.contact-card i {
+    color: var(--green);
 
-            <span>TRUSTED TECHNOLOGY</span>
+    font-size: 2rem;
 
-            <h2>
-                Brands We Work With
-            </h2>
+    margin-bottom: 15px;
 
-        </div>
+    text-shadow:
+        0 0 15px rgba(32, 217, 111, 0.35);
+}
 
+.contact-card h3 {
+    color: var(--silver-light);
 
+    margin-bottom: 8px;
+}
 
-        <div class="brands-list">
+.contact-card a {
+    color: var(--silver);
 
-            <span>Hikvision</span>
+    transition: 0.3s ease;
+}
 
-            <span>Ajax Systems</span>
+.contact-card a:hover {
+    color: var(--green);
+}
 
-            <span>Tiandy</span>
 
-            <span>Dahua</span>
+/* =========================================================
+   FLOATING WHATSAPP + CALL
+========================================================= */
 
-            <span>Centurion Systems</span>
+.floating-buttons {
+    position: fixed;
 
-        </div>
+    right: 20px;
 
-    </div>
+    bottom: 22px;
 
-</section>
+    z-index: 99999;
 
+    display: flex;
 
+    flex-direction: column;
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+    gap: 12px;
+}
 
-<section id="contact" class="section contact">
+.floating-buttons a {
+    width: 58px;
 
-    <div class="container">
+    height: 58px;
 
+    display: flex;
 
-        <div class="section-title">
+    align-items: center;
 
-            <span>GET IN TOUCH</span>
+    justify-content: center;
 
-            <h2>
-                Let's Secure Your Property
-            </h2>
+    border-radius: 50%;
 
-            <p>
-                Contact Boza Satellite and Security for a tailored
-                quotation.
-            </p>
+    font-size: 1.45rem;
 
-        </div>
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55);
 
+    transition: 0.35s ease;
+}
 
+.floating-buttons a:hover {
+    transform:
+        scale(1.13);
+}
 
-        <div class="contact-grid">
+.floating-whatsapp {
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-dark),
+            var(--green)
+        );
 
+    color: #06130b;
 
-            <!-- PHONE -->
+    animation:
+        whatsappPulse 3s ease-in-out infinite;
+}
 
-            <div class="contact-card">
+.floating-call {
+    background:
+        #0b0c0c;
 
-                <i class="fas fa-phone"></i>
+    color:
+        var(--silver-light);
 
-                <h3>
-                    Call Us
-                </h3>
+    border:
+        2px solid var(--silver);
+}
 
-                <p>
+.floating-call:hover {
+    color:
+        var(--green);
 
-                    <a href="tel:+27840366682">
-                        084 036 6682
-                    </a>
+    border-color:
+        var(--green);
 
-                </p>
+    box-shadow:
+        var(--green-glow);
+}
 
-            </div>
 
+/* =========================================================
+   FOOTER
+========================================================= */
 
+footer {
+    position: relative;
 
-            <!-- WHATSAPP -->
+    background:
+        linear-gradient(
+            135deg,
+            #050606,
+            #111313
+        );
 
-            <div class="contact-card">
+    border-top:
+        2px solid var(--green);
 
-                <i class="fab fa-whatsapp"></i>
+    text-align: center;
 
-                <h3>
-                    WhatsApp
-                </h3>
+    padding:
+        65px 0 35px;
 
-                <p>
+    overflow: hidden;
+}
 
-                    <a
-                        href="https://wa.me/27840366682"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Chat With Us
-                    </a>
+footer::before {
+    content: "";
 
-                </p>
+    position: absolute;
 
-            </div>
+    left: -100%;
 
+    top: 0;
 
+    width: 100%;
+    height: 2px;
 
-            <!-- EMAIL -->
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--silver),
+            var(--green),
+            var(--silver),
+            transparent
+        );
 
-            <div class="contact-card">
+    animation:
+        footerLight 5s linear infinite;
+}
 
-                <i class="fas fa-envelope"></i>
+.footer-logo {
+    width: 190px;
 
-                <h3>
-                    Email
-                </h3>
+    height: 100px;
 
-                <p>
+    object-fit: contain;
 
-                    <a href="mailto:shmoerane@gmail.com">
-                        shmoerane@gmail.com
-                    </a>
+    margin:
+        0 auto 22px;
 
-                </p>
+    filter:
+        drop-shadow(
+            0 0 10px rgba(32, 217, 111, 0.25)
+        );
+}
 
-            </div>
+footer h2 {
+    color:
+        var(--silver-light);
 
+    font-size:
+        1.25rem;
 
-        </div>
+    margin-bottom:
+        12px;
+}
 
-    </div>
+footer p {
+    color:
+        var(--muted);
 
-</section>
+    max-width:
+        850px;
 
+    margin:
+        8px auto;
 
+    font-size:
+        0.88rem;
+}
 
-<!-- =====================================================
-     FLOATING BUTTONS
-===================================================== -->
+.copyright {
+    margin-top:
+        28px !important;
 
-<div class="floating-buttons">
+    padding-top:
+        22px;
 
+    border-top:
+        1px solid var(--border);
 
-    <a
-        href="https://wa.me/27840366682"
-        class="floating-whatsapp"
-        target="_blank"
-        rel="noopener"
-        aria-label="Contact Boza Security on WhatsApp"
-        title="WhatsApp Boza Security"
-    >
+    font-size:
+        0.78rem !important;
+}
 
-        <i class="fab fa-whatsapp"></i>
 
-    </a>
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
+@keyframes scanLine {
 
+    0% {
+        transform:
+            translateY(-20px);
+    }
 
-    <a
-        href="tel:+27840366682"
-        class="floating-call"
-        aria-label="Call Boza Security"
-        title="Call Boza Security"
-    >
+    50% {
+        transform:
+            translateY(760px);
+    }
 
-        <i class="fas fa-phone"></i>
+    100% {
+        transform:
+            translateY(-20px);
+    }
+}
 
-    </a>
+@keyframes ringRotate {
 
+    from {
+        transform:
+            translateY(-50%)
+            rotate(0deg);
+    }
 
-</div>
+    to {
+        transform:
+            translateY(-50%)
+            rotate(360deg);
+    }
+}
 
+@keyframes whatsappPulse {
 
+    0%,
+    100% {
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.5);
+    }
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+    50% {
+        box-shadow:
+            0 8px 30px rgba(32, 217, 111, 0.38);
+    }
+}
 
-<footer>
+@keyframes footerLight {
 
-    <div class="container">
+    0% {
+        left: -100%;
+    }
 
+    100% {
+        left: 100%;
+    }
+}
 
-        <img
-            src="boza-satellite-security-logo.jpg"
-            class="footer-logo"
-            alt="Boza Satellite and Security Johannesburg"
-            loading="lazy"
-        >
 
+/* =========================================================
+   TABLETS
+========================================================= */
 
-        <h2>
-            Boza Satellite and Security
-            Accredited Technicians (PTY) LTD
-        </h2>
+@media (max-width: 1000px) {
 
+    .services-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
-        <p>
-            Professional Security Installations & Maintenance
-        </p>
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
+    .gallery-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
 
-        <p>
-            CCTV • Ajax Alarm Systems • Gate Motors • Garage Door Motors
-            • Electric Fencing • Network Cabling • Security Maintenance
-        </p>
 
+/* =========================================================
+   MOBILE
+========================================================= */
 
-        <p>
-            Proudly serving Soweto and South Johannesburg,
-            North Johannesburg and surrounding areas.
-        </p>
+@media (max-width: 768px) {
 
+    .section {
+        padding:
+            80px 0;
+    }
 
-        <p class="copyright">
 
-            © 2026 Boza Satellite and Security Accredited Technicians
-            (PTY) LTD. All Rights Reserved.
+    /* HEADER */
 
-        </p>
+    .header-container {
+        min-height:
+            105px;
+    }
 
 
-    </div>
+    /* LARGE MOBILE LOGO */
 
-</footer>
+    .logo {
+        width:
+            205px;
+    }
 
+    .logo img {
+        width:
+            205px;
 
+        height:
+            92px;
+    }
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
-<script src="script.js"></script>
+    /* MENU BUTTON */
 
+    .menu-toggle {
+        display:
+            flex;
 
-</body>
+        position:
+            absolute;
 
-</html>
+        right:
+            0;
+
+        top:
+            50%;
+
+        transform:
+            translateY(-50%);
+    }
+
+
+    /* NAVIGATION */
+
+    #navbar {
+        position:
+            absolute;
+
+        top:
+            105px;
+
+        left:
+            0;
+
+        width:
+            100%;
+
+        background:
+            rgba(8, 9, 9, 0.98);
+
+        border-top:
+            1px solid var(--border);
+
+        transform:
+            translateY(-20px);
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transition:
+            0.3s ease;
+    }
+
+    #navbar.active {
+        transform:
+            translateY(0);
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+    }
+
+    #navbar ul {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+    }
+
+    #navbar li,
+    #navbar li:nth-child(1),
+    #navbar li:nth-child(2),
+    #navbar li:nth-child(3),
+    #navbar li:nth-child(4),
+    #navbar li:nth-child(5) {
+
+        margin:
+            0;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    #navbar a {
+        display:
+            block;
+
+        padding:
+            16px 6%;
+    }
+
+    #navbar a::after {
+        display:
+            none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height:
+            690px;
+    }
+
+    .hero-text {
+        padding:
+            75px 0;
+    }
+
+    .hero h1 {
+        font-size:
+            2.35rem;
+    }
+
+    .hero h2 {
+        font-size:
+            1rem;
+    }
+
+    .hero p {
+        font-size:
+            0.92rem;
+    }
+
+    .hero-buttons {
+        flex-direction:
+            column;
+    }
+
+    .btn {
+        width:
+            100%;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            50px;
+    }
+
+    .about-features {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* WHY */
+
+    .why-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-grid img {
+        height:
+            180px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* FLOATING BUTTONS */
+
+    .floating-buttons {
+        right:
+            14px;
+
+        bottom:
+            15px;
+    }
+
+    .floating-buttons a {
+        width:
+            53px;
+
+        height:
+            53px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .container {
+        width:
+            90%;
+    }
+
+
+    /* KEEP LOGO LARGE */
+
+    .logo {
+        width:
+            185px;
+    }
+
+    .logo img {
+        width:
+            185px;
+
+        height:
+            85px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            2rem;
+    }
+
+
+    .section-title h2 {
+        font-size:
+            1.8rem;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .gallery-grid img {
+        height:
+            230px;
+    }
+
+
+    .brands-list {
+        flex-direction:
+            column;
+    }
+
+    .brands-list span {
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+}
