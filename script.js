@@ -1,41 +1,166 @@
-/* =========================================================
-   JAVASCRIPT SCROLL REVEAL
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-.reveal {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
 
-    opacity: 0;
+    /* ==============================
+       MOBILE MENU
+    ============================== */
 
-    transform: translateY(25px);
+    if (menuToggle && navbar) {
 
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        menuToggle.addEventListener("click", function () {
 
-}
+            navbar.classList.toggle("active");
 
+            const isOpen = navbar.classList.contains("active");
 
-.reveal.show {
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
-    opacity: 1;
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
 
-    transform: translateY(0);
-
-}
-
-
-.site-header.scrolled {
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.65);
-
-}
+        });
 
 
-.image-error {
+        /* Close menu after clicking a link */
 
-    background: var(--black);
+        const navLinks = navbar.querySelectorAll("a");
 
-    min-height: 100px;
+        navLinks.forEach(function (link) {
 
-}
+            link.addEventListener("click", function () {
+
+                navbar.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            });
+
+        });
+
+
+        /* Close menu when clicking outside */
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !navbar.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                navbar.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* ==============================
+       HEADER SHADOW ON SCROLL
+    ============================== */
+
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 30) {
+
+                header.classList.add("scrolled");
+
+            } else {
+
+                header.classList.remove("scrolled");
+
+            }
+
+        });
+
+    }
+
+
+    /* ==============================
+       REVEAL SECTIONS ON SCROLL
+    ============================== */
+
+    const revealElements = document.querySelectorAll(
+        ".section-title, .about-grid, .service-card, .why-card, .gallery-grid img, .brands-list span, .contact-card"
+    );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("reveal");
+
+            observer.observe(element);
+
+        });
+
+    }
+
+
+    /* ==============================
+       CURRENT YEAR
+    ============================== */
+
+    const yearElements = document.querySelectorAll(".current-year");
+
+    yearElements.forEach(function (element) {
+
+        element.textContent = new Date().getFullYear();
+
+    });
+
+
+});
