@@ -1,58 +1,41 @@
-// ==========================
-// MOBILE MENU
-// ==========================
+/* =========================================================
+   JAVASCRIPT SCROLL REVEAL
+========================================================= */
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+.reveal {
 
-if(menuToggle){
+    opacity: 0;
 
-menuToggle.addEventListener("click",()=>{
+    transform: translateY(25px);
 
-nav.classList.toggle("active");
-
-});
-
-}
-
-// Close menu after clicking a link
-
-document.querySelectorAll("nav a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-nav.classList.remove("active");
-
-});
-
-});
-// ==========================
-// SCROLL ANIMATION
-// ==========================
-
-const sections=document.querySelectorAll("section");
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 
 }
 
-});
 
-},{threshold:0.15});
+.reveal.show {
 
-sections.forEach(section=>{
+    opacity: 1;
 
-section.style.opacity="0";
-section.style.transform="translateY(40px)";
-section.style.transition="all .8s ease";
+    transform: translateY(0);
 
-observer.observe(section);
+}
 
-});
+
+.site-header.scrolled {
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.65);
+
+}
+
+
+.image-error {
+
+    background: var(--black);
+
+    min-height: 100px;
+
+}
