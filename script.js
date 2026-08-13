@@ -1,95 +1,184 @@
+/* =========================================================
+   BOZA SATELLITE & SECURITY
+   MAIN JAVASCRIPT
+   MENU • ANIMATIONS • SCROLL EFFECTS
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
     const menuToggle = document.getElementById("menu-toggle");
     const navbar = document.getElementById("navbar");
+    const header = document.querySelector(".site-header");
 
-    /* ==============================
+
+    /* =====================================================
        MOBILE MENU
-    ============================== */
+    ===================================================== */
+
+    function openMenu() {
+
+        if (!navbar || !menuToggle) return;
+
+        navbar.classList.add("active");
+
+        menuToggle.classList.add("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+    }
+
+
+    function closeMenu() {
+
+        if (!navbar || !menuToggle) return;
+
+        navbar.classList.remove("active");
+
+        menuToggle.classList.remove("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+    }
+
+
+    function toggleMenu() {
+
+        if (!navbar) return;
+
+        if (navbar.classList.contains("active")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    }
+
 
     if (menuToggle && navbar) {
 
-        menuToggle.addEventListener("click", function () {
+        /* MENU BUTTON */
 
-            navbar.classList.toggle("active");
+        menuToggle.addEventListener(
+            "click",
+            function (event) {
 
-            const isOpen = navbar.classList.contains("active");
+                event.stopPropagation();
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+                toggleMenu();
 
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation menu" : "Open navigation menu"
-            );
-
-        });
+            }
+        );
 
 
-        /* Close menu after clicking a link */
+        /* NAVIGATION LINKS */
 
         const navLinks = navbar.querySelectorAll("a");
 
         navLinks.forEach(function (link) {
 
-            link.addEventListener("click", function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                navbar.classList.remove("active");
+                    closeMenu();
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-            });
+                }
+            );
 
         });
 
 
-        /* Close menu when clicking outside */
+        /* CLICK OUTSIDE MENU */
 
-        document.addEventListener("click", function (event) {
+        document.addEventListener(
+            "click",
+            function (event) {
 
-            if (
-                !navbar.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
+                if (
+                    navbar.classList.contains("active") &&
+                    !navbar.contains(event.target) &&
+                    !menuToggle.contains(event.target)
+                ) {
 
-                navbar.classList.remove("active");
+                    closeMenu();
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
+                }
 
             }
+        );
 
-        });
+
+        /* ESCAPE KEY */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    navbar.classList.contains("active")
+                ) {
+
+                    closeMenu();
+
+                    menuToggle.focus();
+
+                }
+
+            }
+        );
+
+
+        /* CLOSE MENU WHEN SCREEN BECOMES DESKTOP SIZE */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 768 &&
+                    navbar.classList.contains("active")
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
 
     }
 
 
-    /* ==============================
-       HEADER SHADOW ON SCROLL
-    ============================== */
-
-    const header = document.querySelector(".site-header");
+    /* =====================================================
+       HEADER SCROLL EFFECT
+    ===================================================== */
 
     if (header) {
 
-        window.addEventListener("scroll", function () {
+        function updateHeader() {
 
             if (window.scrollY > 30) {
 
@@ -101,23 +190,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-        });
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+
+        /* Run once when page loads */
+
+        updateHeader();
 
     }
 
 
-    /* ==============================
-       REVEAL SECTIONS ON SCROLL
-    ============================== */
+    /* =====================================================
+       SCROLL REVEAL ANIMATIONS
+    ===================================================== */
 
     const revealElements = document.querySelectorAll(
-        ".section-title, .about-grid, .service-card, .why-card, .gallery-grid img, .brands-list span, .contact-card"
+        [
+            ".section-title",
+            ".about-grid",
+            ".service-card",
+            ".why-card",
+            ".gallery-grid img",
+            ".brands-list span",
+            ".contact-card"
+        ].join(", ")
     );
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        revealElements.length &&
+        "IntersectionObserver" in window
+    ) {
 
         const observer = new IntersectionObserver(
+
             function (entries, observer) {
 
                 entries.forEach(function (entry) {
@@ -126,41 +239,197 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         entry.target.classList.add("show");
 
-                        observer.unobserve(entry.target);
+                        observer.unobserve(
+                            entry.target
+                        );
 
                     }
 
                 });
 
             },
+
             {
-                threshold: 0.12
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             }
+
         );
 
 
-        revealElements.forEach(function (element) {
+        revealElements.forEach(
+            function (element, index) {
 
-            element.classList.add("reveal");
+                element.classList.add("reveal");
 
-            observer.observe(element);
+                /*
+                   Small staggered delay so cards
+                   don't all appear at exactly
+                   the same time.
+                */
 
-        });
+                if (
+                    element.classList.contains("service-card") ||
+                    element.classList.contains("why-card") ||
+                    element.classList.contains("contact-card") ||
+                    element.closest(".gallery-grid")
+                ) {
+
+                    const delay =
+                        Math.min(index * 60, 360);
+
+                    element.style.setProperty(
+                        "--reveal-delay",
+                        delay + "ms"
+                    );
+
+                }
+
+                observer.observe(element);
+
+            }
+        );
+
+    } else {
+
+        /*
+           Fallback for older browsers.
+           Everything remains visible.
+        */
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add("show");
+
+            }
+        );
 
     }
 
 
-    /* ==============================
+    /* =====================================================
        CURRENT YEAR
-    ============================== */
+    ===================================================== */
 
-    const yearElements = document.querySelectorAll(".current-year");
+    const yearElements =
+        document.querySelectorAll(".current-year");
 
-    yearElements.forEach(function (element) {
 
-        element.textContent = new Date().getFullYear();
+    yearElements.forEach(
+        function (element) {
 
-    });
+            element.textContent =
+                new Date().getFullYear();
 
+        }
+    );
+
+
+    /* =====================================================
+       SMOOTH INTERNAL NAVIGATION
+    ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        link.getAttribute("href");
+
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+
+                        return;
+
+                    }
+
+
+                    event.preventDefault();
+
+
+                    const headerHeight =
+                        header
+                            ? header.offsetHeight
+                            : 0;
+
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        headerHeight;
+
+
+                    window.scrollTo({
+
+                        top: targetPosition,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ACCESSIBILITY
+    ===================================================== */
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    toggleMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       PAGE READY
+    ===================================================== */
+
+    document.body.classList.add("js-ready");
 
 });
