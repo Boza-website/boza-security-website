@@ -1357,3 +1357,419 @@ footer .copyright {
     }
 
 }
+/* =========================================================
+   BOZA VISUAL COMPACT OVERRIDE
+   SMOKY GRAPHITE • SILVER • GREEN
+========================================================= */
+
+:root {
+    --bg: #202424;
+    --bg-dark: #151818;
+    --bg-card: #292e2e;
+    --silver: #dcdcdc;
+    --silver-light: #f7f7f7;
+    --muted: #bfc4c4;
+}
+
+
+/* ==============================
+   BODY
+============================== */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(32,232,121,0.07),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #202424 0%,
+            #191d1d 50%,
+            #242929 100%
+        );
+
+    color: #eeeeee;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.site-header {
+    background: rgba(32,36,36,0.96);
+}
+
+
+.header-container {
+    min-height: 82px;
+}
+
+
+/* Larger logo without making
+   the header too tall */
+
+.logo,
+.logo img {
+    width: 190px;
+}
+
+
+.logo img {
+    filter:
+        drop-shadow(0 0 10px rgba(32,232,121,0.22));
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 510px;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(32,232,121,0.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #202525,
+            #2b3030
+        );
+}
+
+
+.hero-content {
+    padding: 40px 0;
+}
+
+
+.hero-tag {
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+    margin-bottom: 14px;
+}
+
+
+.hero h2 {
+    margin-bottom: 12px;
+}
+
+
+.hero p {
+    margin-bottom: 18px;
+}
+
+
+/* ==============================
+   ALL SECTIONS
+============================== */
+
+.section {
+    padding: 45px 0;
+}
+
+
+/* ==============================
+   SECTION HEADINGS
+============================== */
+
+.section-title {
+    margin-bottom: 28px;
+}
+
+
+.section-title h2 {
+    margin: 5px 0 7px;
+}
+
+
+/* ==============================
+   ABOUT
+============================== */
+
+.about {
+    background:
+        linear-gradient(
+            135deg,
+            #292e2e,
+            #222727
+        );
+}
+
+
+.about-grid {
+    gap: 30px;
+}
+
+
+.about-text h3 {
+    margin-bottom: 10px;
+}
+
+
+.about-text p {
+    margin-bottom: 9px;
+}
+
+
+.about-features {
+    margin-top: 14px;
+}
+
+
+/* ==============================
+   WHY US
+============================== */
+
+.why-us {
+    background:
+        linear-gradient(
+            135deg,
+            #202525,
+            #292e2e
+        );
+}
+
+
+.why-card {
+    padding: 20px 17px;
+}
+
+
+/* ==============================
+   SERVICES
+============================== */
+
+.services {
+    background:
+        linear-gradient(
+            135deg,
+            #292e2e,
+            #202525
+        );
+}
+
+
+.service-card > img {
+    height: 175px;
+}
+
+
+.service-content {
+    padding: 16px;
+}
+
+
+/* ==============================
+   GALLERY
+============================== */
+
+.gallery {
+    background:
+        linear-gradient(
+            135deg,
+            #202525,
+            #292e2e
+        );
+}
+
+
+/* ==============================
+   BRANDS
+============================== */
+
+.brands {
+    background: #1c2020;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+
+.contact {
+    background:
+        linear-gradient(
+            135deg,
+            #292e2e,
+            #202525
+        );
+}
+
+
+.contact-card {
+    padding: 20px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    padding: 35px 0 25px;
+
+    background: #151818;
+}
+
+
+/* =========================================================
+   MOBILE COMPACT VERSION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-container {
+        min-height: 72px;
+    }
+
+
+    .logo,
+    .logo img {
+        width: 160px;
+    }
+
+
+    nav {
+        top: 72px;
+    }
+
+
+    .hero {
+        min-height: 470px;
+    }
+
+
+    .hero-content {
+        padding: 32px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+
+    .hero h2 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.55;
+        margin-bottom: 16px;
+    }
+
+
+    .section {
+        padding: 38px 0;
+    }
+
+
+    .section-title {
+        margin-bottom: 23px;
+    }
+
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+
+    .section-title p {
+        font-size: 14px;
+    }
+
+
+    .about-grid {
+        gap: 22px;
+    }
+
+
+    .about-image img {
+        max-height: 300px;
+    }
+
+
+    .why-card {
+        padding: 18px 14px;
+    }
+
+
+    .service-card > img {
+        height: 145px;
+    }
+
+
+    .gallery-grid img {
+        height: 140px;
+    }
+
+
+    .contact-card {
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .logo,
+    .logo img {
+        width: 150px;
+    }
+
+
+    .hero {
+        min-height: 455px;
+    }
+
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .hero-tag {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+
+    .section {
+        padding: 34px 0;
+    }
+
+
+    .section-title {
+        margin-bottom: 20px;
+    }
+
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+
+    .gallery-grid img {
+        height: 130px;
+    }
+
+           }
