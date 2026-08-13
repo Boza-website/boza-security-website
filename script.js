@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!navbar || !menuToggle) return;
 
         navbar.classList.add("active");
-
         menuToggle.classList.add("active");
 
         menuToggle.setAttribute(
@@ -36,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "aria-label",
             "Close navigation menu"
         );
+
     }
 
 
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!navbar || !menuToggle) return;
 
         navbar.classList.remove("active");
-
         menuToggle.classList.remove("active");
 
         menuToggle.setAttribute(
@@ -56,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "aria-label",
             "Open navigation menu"
         );
+
     }
 
 
@@ -78,8 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuToggle && navbar) {
 
-        /* MENU BUTTON */
-
         menuToggle.addEventListener(
             "click",
             function (event) {
@@ -92,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* NAVIGATION LINKS */
+        const navLinks =
+            navbar.querySelectorAll("a");
 
-        const navLinks = navbar.querySelectorAll("a");
 
         navLinks.forEach(function (link) {
 
@@ -109,8 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
-        /* CLICK OUTSIDE MENU */
 
         document.addEventListener(
             "click",
@@ -130,8 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* ESCAPE KEY */
-
         document.addEventListener(
             "keydown",
             function (event) {
@@ -150,8 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-
-        /* CLOSE MENU WHEN SCREEN BECOMES DESKTOP SIZE */
 
         window.addEventListener(
             "resize",
@@ -200,28 +192,34 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* Run once when page loads */
-
         updateHeader();
 
     }
 
 
     /* =====================================================
-       SCROLL REVEAL ANIMATIONS
+       SCROLL REVEAL
+       
+       IMPORTANT:
+       Elements already visible when the page loads
+       are shown immediately.
+       
+       Elements further down still animate when
+       the visitor scrolls to them.
     ===================================================== */
 
-    const revealElements = document.querySelectorAll(
-        [
-            ".section-title",
-            ".about-grid",
-            ".service-card",
-            ".why-card",
-            ".gallery-grid img",
-            ".brands-list span",
-            ".contact-card"
-        ].join(", ")
-    );
+    const revealElements =
+        document.querySelectorAll(
+            [
+                ".section-title",
+                ".about-grid",
+                ".service-card",
+                ".why-card",
+                ".gallery-grid img",
+                ".brands-list span",
+                ".contact-card"
+            ].join(", ")
+        );
 
 
     if (
@@ -229,32 +227,35 @@ document.addEventListener("DOMContentLoaded", function () {
         "IntersectionObserver" in window
     ) {
 
-        const observer = new IntersectionObserver(
+        const observer =
+            new IntersectionObserver(
 
-            function (entries, observer) {
+                function (entries, observer) {
 
-                entries.forEach(function (entry) {
+                    entries.forEach(function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (entry.isIntersecting) {
 
-                        entry.target.classList.add("show");
+                            entry.target.classList.add("show");
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                            observer.unobserve(
+                                entry.target
+                            );
 
-                    }
+                        }
 
-                });
+                    });
 
-            },
+                },
 
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px 0px"
-            }
+                {
+                    threshold: 0.05,
 
-        );
+                    rootMargin:
+                        "0px 0px -20px 0px"
+                }
+
+            );
 
 
         revealElements.forEach(
@@ -262,11 +263,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 element.classList.add("reveal");
 
-                /*
-                   Small staggered delay so cards
-                   don't all appear at exactly
-                   the same time.
-                */
+
+                /* -----------------------------------------
+                   STAGGERED CARD ANIMATION
+                ----------------------------------------- */
 
                 if (
                     element.classList.contains("service-card") ||
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ) {
 
                     const delay =
-                        Math.min(index * 60, 360);
+                        Math.min(index * 45, 250);
 
                     element.style.setProperty(
                         "--reveal-delay",
@@ -285,17 +285,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-                observer.observe(element);
+
+                /* -----------------------------------------
+                   IMPORTANT FIX
+
+                   If the element is already visible
+                   when the page opens, reveal it now.
+                ----------------------------------------- */
+
+                const rect =
+                    element.getBoundingClientRect();
+
+
+                if (
+                    rect.top <
+                    window.innerHeight * 0.95
+                ) {
+
+                    element.classList.add("show");
+
+                } else {
+
+                    observer.observe(element);
+
+                }
 
             }
         );
 
+
     } else {
 
-        /*
-           Fallback for older browsers.
-           Everything remains visible.
-        */
+        /* Older browser fallback */
 
         revealElements.forEach(
             function (element) {
@@ -345,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const targetId =
                         link.getAttribute("href");
+
 
                     if (
                         !targetId ||
