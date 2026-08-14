@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boza — Image Crop & Edit</title>
+  <link rel="stylesheet" href="image-editor.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Image Crop & Edit</h1>
+    <p class="lead">Upload an image, drag to select a crop area, then crop, rotate, flip, or download the result.</p>
+
+    <section class="tool">
+      <div class="left">
+        <input id="fileInput" type="file" accept="image/*">
+        <div class="btns">
+          <button id="cropBtn">Crop</button>
+          <button id="rotateLeftBtn">Rotate -90°</button>
+          <button id="rotateRightBtn">Rotate +90°</button>
+          <button id="flipHBtn">Flip H</button>
+          <button id="flipVBtn">Flip V</button>
+          <button id="resetBtn">Reset</button>
+          <button id="downloadBtn">Download</button>
+        </div>
+        <p class="hint">Tip: Drag across the image to draw a selection rectangle. Click Crop to apply it.</p>
+      </div>
+
+      <div class="right">
+        <div class="canvas-wrap">
+          <canvas id="canvas" width="800" height="600"></canvas>
+          <div id="overlay" class="overlay"></div>
+        </div>
+
+        <div class="preview">
+          <h3>Preview</h3>
+          <canvas id="preview" width="320" height="240"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Created for Boza Security — image editor for cropping, rotating and simple edits.</p>
+    </footer>
+  </main>
+
+  <script src="image-editor.js"></script>
+</body>
+</html>
