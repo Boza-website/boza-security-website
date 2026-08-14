@@ -6,14 +6,43 @@
   <title>Boza — Image Crop & Edit</title>
   <link rel="stylesheet" href="image-editor.css">
 </head>
-<body>
+<body class="theme-dark">
   <main class="page">
     <h1>Image Crop & Edit</h1>
     <p class="lead">Upload an image, drag to select a crop area, then crop, rotate, flip, or download the result.</p>
 
     <section class="tool">
       <div class="left">
-        <input id="fileInput" type="file" accept="image/*">
+        <label class="file-label">
+          <input id="fileInput" type="file" accept="image/*">
+        </label>
+
+        <div class="controls">
+          <div class="control-row">
+            <label for="aspectSelect">Crop Preset</label>
+            <select id="aspectSelect">
+              <option value="none">None</option>
+              <option value="1:1">1:1 (Square)</option>
+              <option value="16:9">16:9</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <label for="exportType">Export</label>
+            <select id="exportType">
+              <option value="png">PNG</option>
+              <option value="jpeg">JPEG</option>
+            </select>
+            <label for="jpegQuality" class="quality-label">Quality</label>
+            <input id="jpegQuality" type="range" min="0.4" max="1" step="0.05" value="0.9">
+          </div>
+
+          <div class="control-row">
+            <label for="themeToggle">Light theme</label>
+            <input id="themeToggle" type="checkbox" aria-label="Toggle light theme">
+          </div>
+        </div>
+
         <div class="btns">
           <button id="cropBtn">Crop</button>
           <button id="rotateLeftBtn">Rotate -90°</button>
@@ -23,13 +52,13 @@
           <button id="resetBtn">Reset</button>
           <button id="downloadBtn">Download</button>
         </div>
-        <p class="hint">Tip: Drag across the image to draw a selection rectangle. Click Crop to apply it.</p>
+        <p class="hint">Tip: Drag across the image (or touch and drag) to draw a selection rectangle. Use Crop to apply. Choose a preset to constrain the aspect ratio.</p>
       </div>
 
       <div class="right">
         <div class="canvas-wrap">
           <canvas id="canvas" width="800" height="600"></canvas>
-          <div id="overlay" class="overlay"></div>
+          <div id="overlay" class="overlay" aria-hidden="true"></div>
         </div>
 
         <div class="preview">
